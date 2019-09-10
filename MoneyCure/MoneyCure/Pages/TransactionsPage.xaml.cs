@@ -20,13 +20,13 @@ namespace MoneyCure.Pages
         
 
         //EVENT HANDLERS
-        public async void OnSavingsClicked(object sender, EventArgs eventArgs) {
-            await Navigation.PushAsync(new SavingsPage());
+        public void OnSavingsClicked(object sender, EventArgs eventArgs) {
+            App.Current.MainPage = new NavigationPage(new SavingsPage());
         }
 
-        public async void OnReportsClicked(object sender, EventArgs eventArgs)
+        public void OnReportsClicked(object sender, EventArgs eventArgs)
         {
-            await Navigation.PushAsync(new ReportsPage());
+            App.Current.MainPage = new NavigationPage(new ReportsPage());
         }
     }
 }

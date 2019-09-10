@@ -15,6 +15,7 @@ namespace MoneyCure.Pages
         public ReportsPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

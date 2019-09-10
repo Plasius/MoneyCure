@@ -16,11 +16,12 @@ namespace MoneyCure.Pages
         public LoginPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
 
         }
-        public async void OnButtonClicked(object sender, EventArgs args)
+        public  void OnButtonClicked(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new TransactionsPage());
+            App.Current.MainPage = new NavigationPage(new TransactionsPage());
         }
 
     }

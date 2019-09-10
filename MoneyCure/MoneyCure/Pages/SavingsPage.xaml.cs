@@ -15,6 +15,7 @@ namespace MoneyCure.Pages
         public SavingsPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
         async void Editbt(object sender, EventArgs args)
         {
@@ -59,14 +60,16 @@ namespace MoneyCure.Pages
         }
 
         //EVENT HANDLERS
-        public async void OnTransactionsClicked(object sender, EventArgs eventArgs)
+        public void OnTransactionsClicked(object sender, EventArgs eventArgs)
         {
-            await Navigation.PushAsync(new TransactionsPage());
+
+            App.Current.MainPage = new NavigationPage(new TransactionsPage());
         }
 
-        public async void OnReportsClicked(object sender, EventArgs eventArgs)
+        public void OnReportsClicked(object sender, EventArgs eventArgs)
         {
-            await Navigation.PushAsync(new ReportsPage());
+
+            App.Current.MainPage = new NavigationPage(new ReportsPage());
         }
     }
 }

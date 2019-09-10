@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BackgroundImageSource="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/wallpaper.jpg"
              x:Class="MoneyCure.Pages.SavingsPage">
     <ContentPage.Content>
 
@@ -27,31 +28,41 @@
                     Property=Width,  
                     Factor=1}" >
                 <StackLayout Margin="0">
-                    <ImageButton Source="edit.png"
+                    <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/edit.png"
                     VerticalOptions="Start" 
                     HorizontalOptions="End"
+                    WidthRequest="50" HeightRequest="50"
                     Clicked="Editbt"
                     BackgroundColor="Transparent"/>
-                    <Label Text="Savings" 
-                   FontSize="Subtitle" 
-                   FontAttributes="Italic" 
-                   HorizontalOptions="Center" 
-                   VerticalOptions="Start" 
-                   Scale="2" 
-                   Margin="0,75,0,3">
-                    </Label>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    <BoxView BackgroundColor="Aqua"/>
-                        <BoxView />
-                        <BoxView />
-                        <BoxView />
-                        <BoxView />
-                        <BoxView />
-                        <BoxView />
-                        <BoxView />
-                        <BoxView />
-                        <BoxView BackgroundColor="Aqua"/>
-                    </StackLayout>
+                    <Label Text="Savings" FontSize="Subtitle" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" Scale="2" Margin="0,75,0,3"/>
+                    <Grid HorizontalOptions="Fill" Padding="15,0,15,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <BoxView Grid.Row="0" Grid.Column="0" BackgroundColor="Aqua"/>
+                        <BoxView Grid.Row="0" Grid.Column="1" BackgroundColor="Aqua"/>
+                        <BoxView Grid.Row="0" Grid.Column="2" BackgroundColor="Aqua"/>
+                        <BoxView Grid.Row="0" Grid.Column="3" BackgroundColor="Aqua"/>
+                        <BoxView Grid.Row="0" Grid.Column="4" BackgroundColor="Aqua"/>
+                        <BoxView Grid.Row="0" Grid.Column="5" BackgroundColor="Aqua"/>
+                        <BoxView Grid.Row="0" Grid.Column="6" BackgroundColor="Aqua"/>
+                        <BoxView Grid.Row="0" Grid.Column="7" BackgroundColor="Aqua"/>
+                        <BoxView Grid.Row="0" Grid.Column="8" BackgroundColor="Aqua"/>
+                        <BoxView Grid.Row="0" Grid.Column="9" BackgroundColor="Aqua"/>
+                    </Grid>
                     <Label Text="Add money" 
                    HorizontalOptions="Center" 
                    VerticalOptions="Center" 
