@@ -57,5 +57,16 @@ namespace MoneyCure.Pages
             Bt3.BackgroundColor = Color.LightGray;
             Bt4.BackgroundColor = Color.LightSkyBlue;
         }
+
+        //EVENT HANDLERS
+        public async void OnTransactionsClicked(object sender, EventArgs eventArgs)
+        {
+            await Navigation.PushAsync(new TransactionsPage());
+        }
+
+        public async void OnReportsClicked(object sender, EventArgs eventArgs)
+        {
+            await Navigation.PushAsync(new ReportsPage());
+        }
     }
 }
