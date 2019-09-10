@@ -15,8 +15,9 @@ namespace MoneyCure.Pages
         public TransactionsPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
-
+        
 
         //EVENT HANDLERS
         public async void OnSavingsClicked(object sender, EventArgs eventArgs) {
