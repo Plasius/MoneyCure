@@ -13,6 +13,7 @@
            FontSize="Large"
            HorizontalOptions="Center"
                VerticalOptions="Start"
+               
            />
         <BoxView  
            HorizontalOptions="Center"
@@ -31,8 +32,6 @@
             MaxLength="4"
             Margin="0,50,0,0"
            
-            
-            
             />
 
         <Button Text="Log in"
