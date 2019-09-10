@@ -7,9 +7,74 @@
              x:Class="MoneyCure.Pages.SavingsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Margin="0">
+                <Button Text="Edit"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="End"
+                    Clicked="Editbt"/>
+                <Label Text="Savings" 
+                   FontSize="Title" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Start" 
+                   Scale="2" 
+                   Margin="0,75,0,3">
+                </Label>
+                <ProgressBar HorizontalOptions="CenterAndExpand" 
+                         VerticalOptions="CenterAndExpand" 
+                         Scale="3" 
+                         Margin="0,40,0,0" 
+                         ProgressColor="#51BBF7" WidthRequest="120"/>
+                <Label Text="Add money" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   Margin="0,50,0,0" 
+                   Scale="1.2"></Label>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="5" 
+                        HorizontalOptions="Start" 
+                        BorderColor="#211DF2" 
+                        BorderWidth="1" 
+                        MinimumWidthRequest="10" 
+                        Margin="0,20,0,0" 
+                            Clicked="Bt1_"
+                        x:Name="Bt1"></Button>
+                    <Button Text="10" 
+                        BorderColor="#211DF2" 
+                        BorderWidth="1" 
+                        MinimumWidthRequest="10" 
+                        Margin="0,20,0,0"
+                            Clicked="Bt2_"
+                        x:Name="Bt2"></Button>
+                    <Button Text="25" 
+                        BorderColor="#211DF2" 
+                        BorderWidth="1" 
+                        MinimumWidthRequest="10" 
+                        Margin="0,20,0,0"
+                            Clicked="Bt3_"
+                        x:Name="Bt3"></Button>
+                    <Button Text="50" 
+                        BorderColor="#211DF2" 
+                        BorderWidth="1" 
+                        MinimumWidthRequest="10" 
+                        Margin="0,20,0,0"
+                        Clicked="Bt4_"
+                        x:Name="Bt4"></Button>
+                    <Button Text="..." 
+                            BorderColor="#211DF2" 
+                            BorderWidth="1" 
+                            MinimumWidthRequest="10" 
+                            Margin="0,20,0,0" 
+                            Clicked="More"
+                            x:Name="Bt5"></Button>
+                </StackLayout>
+                <Button Text="Add" 
+                        HorizontalOptions="Center" 
+                        Margin="0,10,0,0" 
+                        Clicked="Addbt"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
