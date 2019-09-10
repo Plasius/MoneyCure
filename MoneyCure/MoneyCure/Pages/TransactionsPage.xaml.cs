@@ -16,5 +16,16 @@ namespace MoneyCure.Pages
         {
             InitializeComponent();
         }
+
+
+        //EVENT HANDLERS
+        public async void OnSavingsClicked(object sender, EventArgs eventArgs) {
+            await Navigation.PushAsync(new SavingsPage());
+        }
+
+        public async void OnReportsClicked(object sender, EventArgs eventArgs)
+        {
+            await Navigation.PushAsync(new ReportsPage());
+        }
     }
 }
