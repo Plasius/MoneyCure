@@ -4,12 +4,60 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BackgroundImageSource="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/wallpaper.jpg"
              x:Class="MoneyCure.Pages.TransactionsPage">
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <RelativeLayout>
+            <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression  
+                    Type=RelativeToParent,  
+                    Property=Width,  
+                    Factor=1}"  >
+                
+                <Label Text="MoneyCure"
+                       FontSize="42" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Start"
+                        
+                       />
+            </StackLayout>
+
+            <Grid
+                RelativeLayout.WidthConstraint="{ConstraintExpression  
+                    Type=RelativeToParent,  
+                    Property=Width,  
+                    Factor=1}"  
+                RelativeLayout.YConstraint=
+                        "{ConstraintExpression 
+                            Type=RelativeToParent,
+                            Property=Height,
+                            Factor=1,
+                            Constant=-84}">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="25" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/savings.png"
+                                 Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent" Clicked="OnSavingsClicked"/>
+
+                <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/transactions.png"
+                                 Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent"/>
+
+                <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/reports.png"
+                                 Grid.Row="0" Grid.Column="2" BackgroundColor="Transparent" Clicked="OnReportsClicked"/>
+                
+
+                <Label HorizontalTextAlignment="Center" Text="Savings" Grid.Row="1" Grid.Column="0"></Label>
+                <Label HorizontalTextAlignment="Center" Text="Transactions" Grid.Row="1" Grid.Column="1"></Label>
+                <Label HorizontalTextAlignment="Center" Text="Reports" Grid.Row="1" Grid.Column="2"></Label>
+            </Grid>
+        </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

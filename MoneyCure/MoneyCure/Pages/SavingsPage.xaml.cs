@@ -16,5 +16,57 @@ namespace MoneyCure.Pages
         {
             InitializeComponent();
         }
+        async void Editbt(object sender, EventArgs args)
+        {
+            
+        }
+        public async void Addbt(object sender, EventArgs args)
+        {
+
+        }
+        async void More(object sender,EventArgs args)
+        {
+            
+        }
+        async void Bt1_(object sender, EventArgs args)
+        {
+            Bt1.BackgroundColor = Color.LightSkyBlue;
+            Bt2.BackgroundColor = Color.LightGray;
+            Bt3.BackgroundColor = Color.LightGray;
+            Bt4.BackgroundColor = Color.LightGray;
+            
+        }
+        async void Bt2_(object sender, EventArgs args)
+        {
+            Bt1.BackgroundColor = Color.LightGray;
+            Bt2.BackgroundColor = Color.LightSkyBlue;
+            Bt3.BackgroundColor = Color.LightGray;
+            Bt4.BackgroundColor = Color.LightGray;
+        }
+        async void Bt3_(object sender, EventArgs args)
+        {
+            Bt1.BackgroundColor = Color.LightGray;
+            Bt2.BackgroundColor = Color.LightGray;
+            Bt3.BackgroundColor = Color.LightSkyBlue;
+            Bt4.BackgroundColor = Color.LightGray;
+        }
+        async void Bt4_(object sender, EventArgs args)
+        {
+            Bt1.BackgroundColor = Color.LightGray;
+            Bt2.BackgroundColor = Color.LightGray;
+            Bt3.BackgroundColor = Color.LightGray;
+            Bt4.BackgroundColor = Color.LightSkyBlue;
+        }
+
+        //EVENT HANDLERS
+        public async void OnTransactionsClicked(object sender, EventArgs eventArgs)
+        {
+            await Navigation.PushAsync(new TransactionsPage());
+        }
+
+        public async void OnReportsClicked(object sender, EventArgs eventArgs)
+        {
+            await Navigation.PushAsync(new ReportsPage());
+        }
     }
 }
