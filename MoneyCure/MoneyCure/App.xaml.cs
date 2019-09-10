@@ -10,7 +10,7 @@ namespace MoneyCure
         {
             InitializeComponent();
 
-            MainPage = new Pages.LogPage();
+            MainPage = new Pages.LoginPage();
         }
 
         protected override void OnStart()

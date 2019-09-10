@@ -3,13 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             IconImageSource="hatter.jpg"
              mc:Ignorable="d"
              x:Class="MoneyCure.Pages.LoginPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <Label Text="Money Cure" 
+           FontSize="Large"
+           HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+           />
+        <BoxView  
+           HorizontalOptions="Center"
+           HeightRequest="1"
+           WidthRequest="250"  
+           Color="#5b5d68"
+          ></BoxView>
+
+        <Button Text="Log in"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                BackgroundColor="LightSkyBlue"
+                
+               Clicked="OnButtonClicked"/>
+
+    </StackLayout>
+
+
 </ContentPage>
