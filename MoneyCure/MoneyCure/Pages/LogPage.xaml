@@ -7,16 +7,17 @@
              BackgroundImageSource="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/wallpaper.jpg"
              x:Class="MoneyCure.Pages.LogPage">
 
-  <StackLayout x:Name ="wp" Margin="0,0,0,0" VerticalOptions="CenterAndExpand">
-      <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-            <Button x:Name="Inc" Text="Income" Clicked="ClickedInc" WidthRequest="150"/>
-            <Button x:Name="Exp" Text="Expense" Clicked="ClickedExp" WidthRequest="150"/>
+    <StackLayout x:Name ="wp" Margin="0,0,0,0" VerticalOptions="CenterAndExpand">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button x:Name="Inc" Text="Income" Clicked="ClickedInc" WidthRequest="150" BackgroundColor="LightGray" CornerRadius="15"/>
+            <Button x:Name="Exp" Text="Expense" Clicked="ClickedExp" WidthRequest="150" BackgroundColor="LightGray" CornerRadius="15"/>
       </StackLayout>
-
-        <Entry Placeholder="Amount" x:Name="Amount" WidthRequest="250" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
-        <Entry Placeholder="Description" x:Name="DesCript" WidthRequest="250" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
-        <Picker x:Name ="picker" ItemsSource="{Binding Categories}"/>
-        <Button Text="Submit" Clicked="ClickedSub"/>
+        <StackLayout WidthRequest="310" HorizontalOptions="CenterAndExpand">
+            <Entry Placeholder="Amount" x:Name="Amount" HorizontalTextAlignment="Center"/>
+            <Entry Placeholder="Description" x:Name="DesCript" HorizontalTextAlignment="Center"/>
+            <Picker x:Name ="picker" ItemsSource="{Binding Categories}" WidthRequest="125"/>
+            <Button Text="Submit" Clicked="ClickedSub" WidthRequest="125" BackgroundColor="LightSkyBlue" CornerRadius="25"/>
+        </StackLayout>
     </StackLayout>
   
 </ContentPage>

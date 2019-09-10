@@ -19,16 +19,16 @@ namespace MoneyCure.Pages
         }
 
         public void ClickedExp(object sender, EventArgs eventArgs) {
-            Exp.BackgroundColor = Color.Blue;
             Inc.BackgroundColor = Color.LightGray;
-            IsExpense = !IsExpense;
+            Exp.BackgroundColor = Color.LightSkyBlue;
+            IsExpense = true;
         }
 
         public void ClickedInc(object sender, EventArgs eventArgs)
         {
-            Inc.BackgroundColor = Color.Blue;
             Exp.BackgroundColor = Color.LightGray;
-            IsExpense = !IsExpense;
+            Inc.BackgroundColor = Color.LightSkyBlue;
+            IsExpense = false;
         }
 
         public void ClickedSub(object sender, EventArgs eventArgs) {
