@@ -9,30 +9,13 @@
     
     <ContentPage.Content>
         <RelativeLayout>
-            <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression  
-                    Type=RelativeToParent,  
-                    Property=Width,  
-                    Factor=1}"  >
-                
-                <Label Text="MoneyCure"
-                       FontSize="42" 
-                       HorizontalOptions="Center" 
-                       VerticalOptions="Start"
-                        
-                       />
+            <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                <Label Text="MoneyCure" FontSize="42" HorizontalOptions="Center" VerticalOptions="Start"/>
             </StackLayout>
 
             <Grid
-                RelativeLayout.WidthConstraint="{ConstraintExpression  
-                    Type=RelativeToParent,  
-                    Property=Width,  
-                    Factor=1}"  
-                RelativeLayout.YConstraint=
-                        "{ConstraintExpression 
-                            Type=RelativeToParent,
-                            Property=Height,
-                            Factor=1,
-                            Constant=-84}">
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"  
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-84}">
                 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50" />
@@ -53,7 +36,6 @@
                 <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/reports.png"
                                  Grid.Row="0" Grid.Column="2" BackgroundColor="Transparent" Clicked="OnReportsClicked"/>
                 
-
                 <Label HorizontalTextAlignment="Center" Text="Savings" Grid.Row="1" Grid.Column="0"></Label>
                 <Label HorizontalTextAlignment="Center" Text="Transactions" Grid.Row="1" Grid.Column="1"></Label>
                 <Label HorizontalTextAlignment="Center" Text="Reports" Grid.Row="1" Grid.Column="2"></Label>
