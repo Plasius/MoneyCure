@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              IconImageSource="hatter.jpg"
+             BackgroundImageSource="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/wallpaper.jpg"
              mc:Ignorable="d"
              x:Class="MoneyCure.Pages.LoginPage">
 
@@ -11,23 +12,51 @@
         <Label Text="Money Cure" 
            FontSize="Large"
            HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand"
+               VerticalOptions="Start"
            />
         <BoxView  
            HorizontalOptions="Center"
+            VerticalOptions="Fill"
            HeightRequest="1"
            WidthRequest="250"  
            Color="#5b5d68"
+  
           ></BoxView>
+
+        <Entry
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+            BackgroundColor="LightGray"
+           Keyboard="Numeric"
+            MaxLength="4"
+            Margin="0,50,0,0"
+           
+            
+            
+            />
 
         <Button Text="Log in"
                VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center"
                 BackgroundColor="LightSkyBlue"
-                
                Clicked="OnButtonClicked"/>
+         
+        
+        <StackLayout HorizontalOptions="Center" Orientation="Horizontal" >
 
+           <CheckBox VerticalOptions="Start"
+                  HorizontalOptions="Center"
+                  Color="black"  />
+            
+            <Label Text="Check if you want to remain signed in"
+                   VerticalOptions="End"
+                   HorizontalOptions="Center"/>
+
+        </StackLayout>
+        
     </StackLayout>
+
+   
 
 
 </ContentPage>
