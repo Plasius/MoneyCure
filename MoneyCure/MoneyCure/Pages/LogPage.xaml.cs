@@ -12,29 +12,29 @@ namespace MoneyCure.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LogPage : ContentPage
     {
-        int IoE = 0;
-        List<string> Categories = new List<string>(){"cat1", "cat2", "cat3"};
+        bool IsExpense = false;
         public LogPage()
         {
             InitializeComponent();
-            picker.BindingContext = Categories;
         }
 
         public void ClickedExp(object sender, EventArgs eventArgs) {
-            Exp.BackgroundColor = Color.FromRgb(100, 100, 230);
-            Inc.BackgroundColor = Color.FromRgb(128, 128, 128);
-            IoE = -1;
+            Exp.BackgroundColor = Color.Gray;
+            Inc.BackgroundColor = Color.Gray
+            IsExpense = !IsExpense;
         }
 
         public void ClickedInc(object sender, EventArgs eventArgs)
         {
             Inc.BackgroundColor = Color.FromRgb(100, 100, 230);
             Exp.BackgroundColor = Color.FromRgb(128, 128, 128);
-            IoE = 1;
+            IsExpense = !IsExpense;
         }
-        async void ClickedSub(object sender, EventArgs eventArgs)
-        {
+
+        public void ClickedSub(object sender, EventArgs eventArgs) {
+
 
         }
+
     }
 }
