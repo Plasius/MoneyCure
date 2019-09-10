@@ -40,11 +40,18 @@
                    Scale="2" 
                    Margin="0,75,0,3">
                     </Label>
-                    <ProgressBar HorizontalOptions="CenterAndExpand" 
-                         VerticalOptions="CenterAndExpand" 
-                         Scale="3" 
-                         Margin="0,40,0,0" 
-                         ProgressColor="#51BBF7" WidthRequest="120"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <BoxView BackgroundColor="Aqua"/>
+                        <BoxView />
+                        <BoxView />
+                        <BoxView />
+                        <BoxView />
+                        <BoxView />
+                        <BoxView />
+                        <BoxView />
+                        <BoxView />
+                        <BoxView BackgroundColor="Aqua"/>
+                    </StackLayout>
                     <Label Text="Add money" 
                    HorizontalOptions="Center" 
                    VerticalOptions="Center" 
