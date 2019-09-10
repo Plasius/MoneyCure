@@ -20,7 +20,7 @@ namespace MoneyCure.Pages
         }
         public async void OnButtonClicked(object sender, EventArgs args)
         {
-
+            await Navigation.PushAsync(new TransactionsPage());
         }
 
     }
