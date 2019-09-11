@@ -27,13 +27,13 @@ namespace MoneyCure.Controller
 
         public Task<Transaction> GetCheckingTransactions()
         {
-            return db.Table<Transaction>().Where(i => i.IsSavings == false).FirstOrDefaultAsync();
+            return db.Table<Transaction>().FirstOrDefaultAsync();
         }
 
-        public Task<Transaction> GetSavingsTransactions(int transId)
+     /*   public Task<Transaction> GetSavingsTransactions(int transId)
         {
             return db.Table<Transaction>().Where(i => i.IsSavings == true).FirstOrDefaultAsync();
-        }
+        }*/
 
         public Task<int> DeleteTransaction(int transId) {
             return db.DeleteAsync<Transaction>(GetTransaction(transId));

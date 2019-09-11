@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MoneyCure.Model;
 
 namespace MoneyCure.Pages
 {
@@ -37,7 +38,15 @@ namespace MoneyCure.Pages
         {
             if (Selected)
             {
-                App.Current.MainPage = new NavigationPage(new TransactionsPage());
+                double am = int.Parse(Amount.Text);
+                if (IsExpense) { am *= -1; }
+
+                DateTime Day=DateTime.Today;
+
+                
+
+                Transaction Tr = new Transaction(am,Day,DesCript.Text,1);
+                Navigation.PopAsync();
             }
         }
     }

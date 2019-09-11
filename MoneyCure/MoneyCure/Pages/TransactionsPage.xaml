@@ -13,6 +13,7 @@
         </StackLayout>
 
         <ImageButton Margin="10" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50" Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/settings.png"/>
+        <ImageButton Clicked="OnAddTransactionClicked" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-70}" Margin="10" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50" Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/add_transaction.png"/>
         
         
         

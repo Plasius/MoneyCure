@@ -17,9 +17,15 @@ namespace MoneyCure.Pages
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
         }
-        
+
 
         //EVENT HANDLERS
+
+        public async void OnAddTransactionClicked(object sender, EventArgs eventArgs) {
+            await Navigation.PushAsync(new LogPage());
+        }
+
+
         public void OnSavingsClicked(object sender, EventArgs eventArgs) {
             App.Current.MainPage = new NavigationPage(new SavingsPage());
         }

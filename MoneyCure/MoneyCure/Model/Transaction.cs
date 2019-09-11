@@ -15,15 +15,23 @@ namespace MoneyCure.Model
         public double Amount { get; set; }
 
         [NotNull]
-        public DateTime Date { get; set; }
+        public DateTime DT { get; set; }
 
         public string Name { get; set; }
 
         [NotNull]
         public int CatId { get; set; }
 
-        [NotNull]
-        public bool IsSavings { get; set; }
+        public Transaction(double amount, DateTime dateTime, string name, int catId) {
+            Amount = amount;
+            DT = dateTime;
+            Name = name;
+            CatId = catId;
+            
+
+        }
+
+        public Transaction() { }
     }
 
 
