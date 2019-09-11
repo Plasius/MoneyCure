@@ -16,5 +16,9 @@ namespace MoneyCure.Pages
         {
             InitializeComponent();
         }
+        async void Goback(object sender, EventArgs args)
+        {
+            App.Current.MainPage = new NavigationPage(new SavingsPage());
+        }
     }
 }
