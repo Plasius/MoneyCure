@@ -2,11 +2,30 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MoneyCure.Pages;
+using MoneyCure.Controller;
+using System.IO;
 
 namespace MoneyCure
 {
+
     public partial class App : Application
     {
+
+
+        static SQLiteHelper db;
+        public static SQLiteHelper SQLiteDb
+        {
+            get
+            {
+                if (db == null)
+                {
+                    db = new SQLiteHelper(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mcdb.db3"));
+                }
+                return db;
+            }
+        }
+
+
         public App()
         {
             InitializeComponent();
@@ -16,7 +35,6 @@ namespace MoneyCure
 
         protected override void OnStart()
         {
-            // Handle when your app starts
         }
 
         protected override void OnSleep()
