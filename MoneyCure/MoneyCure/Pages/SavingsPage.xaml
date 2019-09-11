@@ -98,13 +98,7 @@
                         Margin="0,20,0,0"
                         Clicked="Bt4_"
                         x:Name="Bt4"></Button>
-                        <Button Text="..." 
-                            BorderColor="#211DF2" 
-                            BorderWidth="1" 
-                            MinimumWidthRequest="10" 
-                            Margin="0,20,0,0" 
-                            Clicked="More"
-                            x:Name="Bt5"></Button>
+                        <Entry/>
                     </StackLayout>
                     <Button Text="Add" 
                         HorizontalOptions="Center" 
