@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MoneyCure.Model;
+using MoneyCure.Data;
 
 namespace MoneyCure.Pages
 {
@@ -17,6 +18,7 @@ namespace MoneyCure.Pages
         public LogPage()
         {
             InitializeComponent();
+            picker.ItemsSource = Enum.GetValues(typeof(PersistenceUtils.Categories)).Cast<PersistenceUtils.Categories>().ToList(); 
         }
 
         public void ClickedExp(object sender, EventArgs eventArgs) {

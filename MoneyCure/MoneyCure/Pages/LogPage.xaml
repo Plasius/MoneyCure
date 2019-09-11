@@ -15,7 +15,7 @@
         <StackLayout WidthRequest="310" HorizontalOptions="CenterAndExpand">
             <Entry Placeholder="Amount" x:Name="Amount" HorizontalTextAlignment="Center"/>
             <Entry Placeholder="Description" x:Name="DesCript" HorizontalTextAlignment="Center"/>
-            <Picker x:Name ="picker" ItemsSource="{Binding Categories}" WidthRequest="125"/>
+            <Picker x:Name ="picker" Title="Categories" WidthRequest="125" />
             <Button Text="Submit" Clicked="ClickedSub" WidthRequest="125" BackgroundColor="LightSkyBlue" CornerRadius="25"/>
         </StackLayout>
     </StackLayout>
