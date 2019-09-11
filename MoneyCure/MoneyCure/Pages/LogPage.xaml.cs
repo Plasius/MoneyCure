@@ -30,13 +30,15 @@ namespace MoneyCure.Pages
             Exp.BackgroundColor = Color.LightGray;
             Inc.BackgroundColor = Color.LightSkyBlue;
             IsExpense = false;
-            Selected=true
+            Selected = true;
         }
 
-        public void ClickedSub(object sender, EventArgs eventArgs) {
-            if (Selected) { 
-            App.Current.MainPage = new NavigationPage(new TransactionsPage());
+        public void ClickedSub(object sender, EventArgs eventArgs)
+        {
+            if (Selected)
+            {
+                App.Current.MainPage = new NavigationPage(new TransactionsPage());
+            }
         }
-
     }
 }
