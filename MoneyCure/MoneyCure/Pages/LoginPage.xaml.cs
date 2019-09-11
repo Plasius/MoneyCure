@@ -17,7 +17,6 @@ namespace MoneyCure.Pages
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            pinEntry.Focus();
 
         }
         public  void OnButtonClicked(object sender, EventArgs args)
