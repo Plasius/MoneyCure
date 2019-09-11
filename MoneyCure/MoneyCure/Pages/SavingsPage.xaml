@@ -21,9 +21,9 @@
                     Property=Width,  
                     Factor=1}" >
             <StackLayout Margin="0">
-                <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/edit.png"
+                <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/settings.png"
                     VerticalOptions="Start" 
-                    HorizontalOptions="End"
+                    HorizontalOptions="Start"
                     WidthRequest="50" HeightRequest="50"
                     Clicked="Editbt"
                     BackgroundColor="Transparent"/>

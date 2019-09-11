@@ -8,51 +8,54 @@
              mc:Ignorable="d"
              x:Class="MoneyCure.Pages.LoginPage">
 
-    <StackLayout VerticalOptions="CenterAndExpand">
-        
+    <RelativeLayout>
         <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
             <ImageButton Padding="0,25,0,0" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/Logo.png" HorizontalOptions="Center" VerticalOptions="Start"/>
         </StackLayout>
-        
-        <BoxView  
-           HorizontalOptions="Center"
-            VerticalOptions="Fill"
-           HeightRequest="1"
-           WidthRequest="250"  
-           Color="#5b5d68"
-  
-          ></BoxView>
 
-        <Entry
-           HorizontalOptions="Center"
-           VerticalOptions="Center"
-            BackgroundColor="LightGray"
-           Keyboard="Numeric"
-            MaxLength="4"
-            Margin="0,50,0,0"
-           
-            />
 
-        <Button Text="Log in"
-               VerticalOptions="CenterAndExpand"
-               HorizontalOptions="Center"
-                BackgroundColor="LightSkyBlue"
-               Clicked="OnButtonClicked"/>
-         
-        
-        <StackLayout HorizontalOptions="Center" Orientation="Horizontal" >
-
-           <CheckBox VerticalOptions="Start"
-                  HorizontalOptions="Center"
-                  Color="black"  />
+        <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"  
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.25}">
             
-            <Label Text="Check if you want to remain signed in"
-                   VerticalOptions="End"
-                   HorizontalOptions="Center"/>
+            <Entry
+                x:Name="pinEntry"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+                BackgroundColor="Transparent"
+               Keyboard="Numeric"
+                MaxLength="4"
+                Margin="0,50,0,0"
+                WidthRequest="200"
+                HeightRequest="75"
+                Placeholder="PIN"
+                HorizontalTextAlignment="Center"
+                FontSize="30"
+                />
 
+            <Button Text="Log in"
+                    HorizontalOptions="Center"
+                    WidthRequest="100"
+                    BackgroundColor="LightSkyBlue"
+                    Margin="0,25,0,25"
+                    FontSize="22"
+                    CornerRadius="15"
+                   Clicked="OnButtonClicked"/>
+
+
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal" >
+
+                <CheckBox
+                      Color="Black"  />
+
+                <Label Text="Stay logged in"
+                       VerticalTextAlignment="Center"
+                       FontSize="22"
+                       />
+
+            </StackLayout>
         </StackLayout>
-        
-    </StackLayout>
+
+    </RelativeLayout>
 
    
 
