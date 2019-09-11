@@ -10,7 +10,7 @@
     <ContentPage.Content>
         <RelativeLayout>
             <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
-                <Label Text="MoneyCure" FontSize="42" HorizontalOptions="Center" VerticalOptions="Start"/>
+                <ImageButton Padding="0,25,0,0" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/Logo.png" HorizontalOptions="Center" VerticalOptions="Start"/>
             </StackLayout>
 
             <Grid
