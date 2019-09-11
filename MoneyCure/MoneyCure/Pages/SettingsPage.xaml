@@ -14,7 +14,10 @@
                     Clicked="Goback"/>
             <Label Text="Welcome to Money Cure app." VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,30,0,0"/>
             <Label Text="Sign up and set a pin." VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,0,0,800"/>
-            <Label Text="First Name" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+            <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                <Label Text="First Name"/>
+                <Entry/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
