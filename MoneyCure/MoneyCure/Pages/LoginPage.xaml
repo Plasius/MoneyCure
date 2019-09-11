@@ -9,11 +9,11 @@
              x:Class="MoneyCure.Pages.LoginPage">
 
     <StackLayout VerticalOptions="CenterAndExpand">
-        <Label Text="Money Cure" 
-           FontSize="Large"
-           HorizontalOptions="Center"
-               VerticalOptions="Start"
-           />
+        
+        <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+            <ImageButton Padding="0,25,0,0" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/Logo.png" HorizontalOptions="Center" VerticalOptions="Start"/>
+        </StackLayout>
+        
         <BoxView  
            HorizontalOptions="Center"
             VerticalOptions="Fill"
@@ -31,8 +31,6 @@
             MaxLength="4"
             Margin="0,50,0,0"
            
-            
-            
             />
 
         <Button Text="Log in"
