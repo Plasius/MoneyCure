@@ -20,11 +20,12 @@
                     Type=RelativeToParent,  
                     Property=Width,  
                     Factor=1}" >
-            <StackLayout Margin="0">
+            <StackLayout>
                 <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/settings.png"
                     VerticalOptions="Start" 
                     HorizontalOptions="Start"
                     WidthRequest="50" HeightRequest="50"
+                    Margin="10"
                     Clicked="Editbt"
                     BackgroundColor="Transparent"/>
                 <Label Text="Savings" FontSize="Subtitle" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" Scale="2" Margin="0,75,0,3"/>
