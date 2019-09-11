@@ -15,7 +15,7 @@ namespace MoneyCure.Model
         public double Amount { get; set; }
 
         [NotNull]
-        public DateTime Date { get; set; }
+        public DateTime DT { get; set; }
 
         public string Name { get; set; }
 
@@ -24,6 +24,18 @@ namespace MoneyCure.Model
 
         [NotNull]
         public bool IsSavings { get; set; }
+
+
+        public Transaction(double amount, DateTime dateTime, string name, int catId, bool isSavings) {
+            Amount = amount;
+            DT = dateTime;
+            Name = name;
+            CatId = catId;
+            IsSavings = IsSavings;
+
+        }
+
+        public Transaction() { }
     }
 
 

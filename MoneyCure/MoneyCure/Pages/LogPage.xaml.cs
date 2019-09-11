@@ -37,7 +37,7 @@ namespace MoneyCure.Pages
         {
             if (Selected)
             {
-                App.Current.MainPage = new NavigationPage(new TransactionsPage());
+                Navigation.PopAsync();
             }
         }
     }
