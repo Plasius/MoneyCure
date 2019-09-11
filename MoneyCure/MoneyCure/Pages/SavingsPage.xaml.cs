@@ -19,7 +19,7 @@ namespace MoneyCure.Pages
         }
         async void Editbt(object sender, EventArgs args)
         {
-            
+            App.Current.MainPage = new NavigationPage(new Pages.SettingsPage());
         }
         public async void Addbt(object sender, EventArgs args)
         {
@@ -71,5 +71,6 @@ namespace MoneyCure.Pages
 
             App.Current.MainPage = new NavigationPage(new ReportsPage());
         }
+        
     }
 }
