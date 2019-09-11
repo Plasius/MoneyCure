@@ -22,16 +22,12 @@ namespace MoneyCure.Model
         [NotNull]
         public int CatId { get; set; }
 
-        [NotNull]
-        public bool IsSavings { get; set; }
-
-
-        public Transaction(double amount, DateTime dateTime, string name, int catId, bool isSavings) {
+        public Transaction(double amount, DateTime dateTime, string name, int catId) {
             Amount = amount;
             DT = dateTime;
             Name = name;
             CatId = catId;
-            IsSavings = IsSavings;
+            
 
         }
 

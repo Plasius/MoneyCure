@@ -45,7 +45,7 @@ namespace MoneyCure.Pages
 
                 
 
-                Transaction Tr = new Transaction(am,Day,DesCript.Text,1,false);
+                Transaction Tr = new Transaction(am,Day,DesCript.Text,1);
                 Navigation.PopAsync();
             }
         }
