@@ -12,7 +12,7 @@ namespace MoneyCure.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LogPage : ContentPage
     {
-        bool IsExpense = false;
+        bool IsExpense = false, Selected=false;
         public LogPage()
         {
             InitializeComponent();
@@ -22,6 +22,7 @@ namespace MoneyCure.Pages
             Inc.BackgroundColor = Color.LightGray;
             Exp.BackgroundColor = Color.LightSkyBlue;
             IsExpense = true;
+            Selected = true;
         }
 
         public void ClickedInc(object sender, EventArgs eventArgs)
@@ -29,11 +30,12 @@ namespace MoneyCure.Pages
             Exp.BackgroundColor = Color.LightGray;
             Inc.BackgroundColor = Color.LightSkyBlue;
             IsExpense = false;
+            Selected=true
         }
 
         public void ClickedSub(object sender, EventArgs eventArgs) {
-
-
+            if (Selected) { 
+            App.Current.MainPage = new NavigationPage(new TransactionsPage());
         }
 
     }
