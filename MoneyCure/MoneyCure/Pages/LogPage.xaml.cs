@@ -18,7 +18,7 @@ namespace MoneyCure.Pages
         public LogPage()
         {
             InitializeComponent();
-            picker.ItemsSource = Enum.GetValues(typeof(PersistenceUtils.Categories)).Cast<PersistenceUtils.Categories>().ToList(); 
+            picker.ItemsSource = Enum.GetValues(typeof(Utils.Categories)).Cast<Utils.Categories>().ToList(); 
         }
 
         public void ClickedExp(object sender, EventArgs eventArgs) {

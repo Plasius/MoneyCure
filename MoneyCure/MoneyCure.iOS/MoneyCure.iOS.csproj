@@ -130,4 +130,7 @@
       <Name>MoneyCure</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Logo.png" />
+  </ItemGroup>
 </Project>

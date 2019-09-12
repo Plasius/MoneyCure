@@ -15,8 +15,8 @@ namespace MoneyCure.Pages
         public SavingsPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
         }
+
         async void Editbt(object sender, EventArgs args)
         {
             App.Current.MainPage = new NavigationPage(new SettingsPage());
