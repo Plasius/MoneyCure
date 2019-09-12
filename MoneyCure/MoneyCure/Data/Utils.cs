@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MoneyCure.Data
 {
-    class PersistenceUtils
+    class Utils
     {
         public enum Categories
         {
