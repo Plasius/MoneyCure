@@ -13,7 +13,7 @@
             <Button x:Name="Exp" Text="Expense" Clicked="ClickedExp" WidthRequest="150" BackgroundColor="LightGray" CornerRadius="15"/>
       </StackLayout>
         <StackLayout WidthRequest="310" HorizontalOptions="CenterAndExpand">
-            <Entry Placeholder="Amount" x:Name="Amount" HorizontalTextAlignment="Center"/>
+            <Entry Placeholder="Amount" x:Name="Amount" HorizontalTextAlignment="Center" Keyboard="Numeric"/>
             <Entry Placeholder="Description" x:Name="DesCript" HorizontalTextAlignment="Center"/>
             <Picker x:Name ="picker" Title="Categories" WidthRequest="125" />
             <Button Text="Submit" Clicked="ClickedSub" WidthRequest="125" BackgroundColor="LightSkyBlue" CornerRadius="25"/>
