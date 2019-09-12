@@ -7,15 +7,18 @@
              x:Class="MoneyCure.Pages.SettingsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Back" 
-                    VerticalOptions="Start" 
-                    HorizontalOptions="Start"
-                    Margin="10,10,0,0"
-                    Clicked="Goback"/>
-            <Label Text="Welcome to Money Cure app." VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,30,0,0"/>
-            <Label Text="Sign up and set a pin." VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,0,0,800"/>
-            <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
-                <Label Text="First Name"/>
+            <Label Text="Welcome to Money Cure app." HorizontalOptions="Center" WidthRequest="200" Margin="0,30,0,0"/>
+            <Label Text="Sign up and set a pin." HorizontalOptions="Center" WidthRequest="200"/>
+            <StackLayout>
+                <Label WidthRequest="200" Text="First Name"/>
+                <Entry/>
+                <Label Text="Last Name"/>
+                <Entry WidthRequest="10"/>
+                <Label Text="PIN"/>
+                <Entry/>
+                <Label Text="Confirming PIN"/>
+                <Entry/>
+                <Label Text="Set your saving goal"/>
                 <Entry/>
             </StackLayout>
         </StackLayout>
