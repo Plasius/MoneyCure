@@ -17,6 +17,10 @@ namespace MoneyCure.Pages
             InitializeComponent();
 
         }
-        
+
+        async void Subbt (object sender, EventArgs args)
+        {
+
+        }
     }
 }

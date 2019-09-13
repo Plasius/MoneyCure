@@ -28,7 +28,7 @@
                     Margin="10"
                     Clicked="Editbt"
                     BackgroundColor="Transparent"/>
-                <Label Text="Savings" FontSize="Subtitle" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" Scale="2" Margin="0,75,0,3"/>
+                <Label Text="Savings" FontSize="Subtitle" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" Scale="2" Margin="0,75,0,10"/>
                 <Grid HorizontalOptions="Fill" Padding="15,0,15,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -60,7 +60,7 @@
                 <Label Text="Add money" 
                    HorizontalOptions="Center" 
                    VerticalOptions="Center" 
-                   Margin="0,50,0,0" 
+                   Margin="0,10,0,0" 
                    Scale="1.2"></Label>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <Button Text="5" 
@@ -101,7 +101,7 @@
                 </StackLayout>
                 <Button Text="Add" 
                         HorizontalOptions="Center" 
-                        Margin="0,10,0,0" 
+                        Margin="0" 
                         Clicked="Addbt"/>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 </StackLayout>
