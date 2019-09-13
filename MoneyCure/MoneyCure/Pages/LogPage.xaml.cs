@@ -41,14 +41,21 @@ namespace MoneyCure.Pages
             if (Selected)
             {
                 double am = int.Parse(Amount.Text);
-                if (IsExpense) { am *= -1; }
+                if (am > 0)
+                {
+                    if (IsExpense) { am *= -1; }
 
-                DateTime Day=DateTime.Today;
+                    DateTime Day = DateTime.Today;
 
-                
 
-                Transaction Tr = new Transaction(am,Day,DesCript.Text,1);
-                Navigation.PopAsync();
+
+                    Transaction Tr = new Transaction(am, Day, DesCript.Text, 1);
+                    Navigation.PopAsync();
+                }
+                else
+                {
+                    DisplayAlert("Error","Amount can't be negative!","OK");
+                }
             }
         }
     }
