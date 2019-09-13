@@ -20,7 +20,14 @@ namespace MoneyCure.Pages
 
         async void Subbt (object sender, EventArgs args)
         {
-
+            if (Pin1.Text != Pin2.Text)
+            {
+                DisplayAlert("Error","Pin doesn't match","Try again");
+            }
+            else
+            {
+                Navigation.PopAsync();
+            }
         }
     }
 }
