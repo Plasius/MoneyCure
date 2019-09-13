@@ -36,7 +36,7 @@ namespace MoneyCure.Pages
         }
         async void Setbt(object sender, EventArgs args)
         {
-            App.Current.MainPage = new NavigationPage(new SettingsPage());
+            await Navigation.PushAsync(new SettingsPage());
         }
     }
 }

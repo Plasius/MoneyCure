@@ -15,6 +15,7 @@ namespace MoneyCure.Pages
         public SettingsPage()
         {
             InitializeComponent();
+
         }
         
     }
