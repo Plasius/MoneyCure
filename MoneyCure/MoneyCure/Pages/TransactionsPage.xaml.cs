@@ -34,5 +34,9 @@ namespace MoneyCure.Pages
         {
             App.Current.MainPage = new NavigationPage(new ReportsPage());
         }
+        async void Setbt(object sender, EventArgs args)
+        {
+            App.Current.MainPage = new NavigationPage(new SettingsPage());
+        }
     }
 }

@@ -25,10 +25,6 @@ namespace MoneyCure.Pages
         {
 
         }
-        async void More(object sender,EventArgs args)
-        {
-            
-        }
         async void Bt1_(object sender, EventArgs args)
         {
             Bt1.BackgroundColor = Color.LightSkyBlue;

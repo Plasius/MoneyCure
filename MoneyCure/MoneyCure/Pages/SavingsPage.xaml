@@ -97,7 +97,6 @@
                             BorderWidth="1" 
                             MinimumWidthRequest="10" 
                             Margin="0,20,0,0" 
-                            Clicked="More"
                             x:Name="Bt5"></Button>
                 </StackLayout>
                 <Button Text="Add" 
