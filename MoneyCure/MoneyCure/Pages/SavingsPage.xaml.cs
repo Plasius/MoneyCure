@@ -15,44 +15,21 @@ namespace MoneyCure.Pages
         public SavingsPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
-        async void Editbt(object sender, EventArgs args)
+        async void OnSettingsClicked(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new SettingsPage());
         }
-        public async void Addbt(object sender, EventArgs args)
+        public void Addbt(object sender, EventArgs args)
         {
 
         }
-        async void Bt1_(object sender, EventArgs args)
+        
+        public void OnAmountClicked(object sender, EventArgs args)
         {
-            Bt1.BackgroundColor = Color.LightSkyBlue;
-            Bt2.BackgroundColor = Color.LightGray;
-            Bt3.BackgroundColor = Color.LightGray;
-            Bt4.BackgroundColor = Color.LightGray;
-            
-        }
-        async void Bt2_(object sender, EventArgs args)
-        {
-            Bt1.BackgroundColor = Color.LightGray;
-            Bt2.BackgroundColor = Color.LightSkyBlue;
-            Bt3.BackgroundColor = Color.LightGray;
-            Bt4.BackgroundColor = Color.LightGray;
-        }
-        async void Bt3_(object sender, EventArgs args)
-        {
-            Bt1.BackgroundColor = Color.LightGray;
-            Bt2.BackgroundColor = Color.LightGray;
-            Bt3.BackgroundColor = Color.LightSkyBlue;
-            Bt4.BackgroundColor = Color.LightGray;
-        }
-        async void Bt4_(object sender, EventArgs args)
-        {
-            Bt1.BackgroundColor = Color.LightGray;
-            Bt2.BackgroundColor = Color.LightGray;
-            Bt3.BackgroundColor = Color.LightGray;
-            Bt4.BackgroundColor = Color.LightSkyBlue;
+            //change selected colors
         }
 
         //EVENT HANDLERS
