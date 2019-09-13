@@ -18,7 +18,9 @@ namespace MoneyCure.Pages
         public LogPage()
         {
             InitializeComponent();
-            picker.ItemsSource = Enum.GetValues(typeof(Utils.Categories)).Cast<Utils.Categories>().ToList(); 
+            var list = Enum.GetValues(typeof(Utils.Categories)).Cast<Utils.Categories>().ToList();
+            list.Remove(Utils.Categories.Income);
+            picker.ItemsSource = list;
         }
 
         public void ClickedExp(object sender, EventArgs eventArgs) {
@@ -26,6 +28,7 @@ namespace MoneyCure.Pages
             Exp.BackgroundColor = Color.LightSkyBlue;
             IsExpense = true;
             Selected = true;
+            picker.IsVisible = true;
         }
 
         public void ClickedInc(object sender, EventArgs eventArgs)
@@ -34,6 +37,7 @@ namespace MoneyCure.Pages
             Inc.BackgroundColor = Color.LightSkyBlue;
             IsExpense = false;
             Selected = true;
+            picker.IsVisible = false;
         }
 
         public void ClickedSub(object sender, EventArgs eventArgs)
@@ -47,14 +51,22 @@ namespace MoneyCure.Pages
 
                     DateTime Day = DateTime.Today;
 
+                    if (IsExpense)
+                    {
+                        Transaction Tr = new Transaction(am, Day, DesCript.Text, picker.SelectedIndex);
+                        DisplayAlert("", picker.SelectedIndex.ToString(), "ok");
+                    }
+                    else
+                    {
+                        Transaction Tr = new Transaction(am, Day, DesCript.Text, -1);
+                    }
 
 
-                    Transaction Tr = new Transaction(am, Day, DesCript.Text, 1);
                     Navigation.PopAsync();
                 }
                 else
                 {
-                    DisplayAlert("Error","Amount can't be negative!","OK");
+                    DisplayAlert("Error", "Amount can't be negative!", "OK");
                 }
             }
         }
