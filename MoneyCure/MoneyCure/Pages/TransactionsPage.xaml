@@ -7,45 +7,73 @@
              BackgroundImageSource="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/wallpaper.jpg"
              x:Class="MoneyCure.Pages.TransactionsPage">
 
-    <RelativeLayout>
-        <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
-            <ImageButton Padding="0,25,0,0" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/Logo.png" HorizontalOptions="Center" VerticalOptions="Start"/>
-        </StackLayout>
+    <ContentPage.Content>
 
-        <ImageButton Clicked="Setbt" Margin="10" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50" Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/settings.png"/>
-        <ImageButton Clicked="OnAddTransactionClicked" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-70}" Margin="10" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50" Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/add_transaction.png"/>
-        
-        
-        
-        <Grid
-                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"  
-                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-90}">
-
+        <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="5" />
-                <RowDefinition Height="50" />
-                <RowDefinition Height="25" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="2*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <BoxView BackgroundColor="Black" Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="0"/>
 
-            <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/savings.png"
-                                 Grid.Row="1" Grid.Column="0" BackgroundColor="Transparent" Clicked="OnSavingsClicked"/>
+            <RelativeLayout Grid.Row="0" Grid.Column="0">
+            
+            <ImageButton                    
+                    Clicked="OnSettingsClicked" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50" Margin="10"
+                    Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/settings.png"/>
 
-            <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/transactions.png"
-                                 Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent"/>
+                <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                <ImageButton HorizontalOptions="Center"
+                        BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Padding="0,25,0,0"
+                        Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/Logo.png" />
+                </StackLayout>
 
-            <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/reports.png"
-                                 Grid.Row="1" Grid.Column="2" BackgroundColor="Transparent" Clicked="OnReportsClicked"/>
+                <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                <ImageButton HorizontalOptions="End"
+                    Clicked="OnAddTransactionClicked" BackgroundColor="Transparent"
+                    WidthRequest="50" HeightRequest="50" Margin="10"
+                    Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/add_transaction.png"/>
+                </StackLayout>
+            </RelativeLayout>
 
-            <Label FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Savings" Grid.Row="2" Grid.Column="0"></Label>
-            <Label FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Transactions" Grid.Row="2" Grid.Column="1"></Label>
-            <Label FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Reports" Grid.Row="2" Grid.Column="2"></Label>
+
+            <Label HorizontalOptions="Center" x:Name="balanceLabel" Grid.Row="1" Grid.Column="0" FontSize="42" Text ="42 EUR"/>
+
+            <ListView  Grid.Row="2" Grid.Column="0" Margin="10" BackgroundColor="Green" x:Name="transactionsListView" />
+
+            <Grid  Grid.Row="3" Grid.Column="0" VerticalOptions="End">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="9*" />
+                    <RowDefinition Height="3*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <BoxView BackgroundColor="Black" Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="0"/>
+
+                <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/savings.png"
+                                     Grid.Row="1" Grid.Column="0" BackgroundColor="Transparent" Clicked="OnSavingsClicked"/>
+
+                <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/transactions.png"
+                                     Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent"/>
+
+                <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/reports.png"
+                                     Grid.Row="1" Grid.Column="2" BackgroundColor="Transparent" Clicked="OnReportsClicked"/>
+
+                <Label FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Savings" Grid.Row="2" Grid.Column="0"></Label>
+                <Label FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Transactions" Grid.Row="2" Grid.Column="1"></Label>
+                <Label FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Reports" Grid.Row="2" Grid.Column="2"></Label>
+            </Grid>
         </Grid>
-    </RelativeLayout>
+
+    </ContentPage.Content>
 </ContentPage>
