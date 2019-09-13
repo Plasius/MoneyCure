@@ -44,7 +44,7 @@ namespace MoneyCure.Pages
         {
             if (Selected)
             {
-                double am = int.Parse(Amount.Text);
+                double am = double.Parse(Amount.Text);
                 if (am > 0)
                 {
                     if (IsExpense) { am *= -1; }
@@ -54,7 +54,6 @@ namespace MoneyCure.Pages
                     if (IsExpense)
                     {
                         Transaction Tr = new Transaction(am, Day, DesCript.Text, picker.SelectedIndex);
-                        DisplayAlert("", picker.SelectedIndex.ToString(), "ok");
                     }
                     else
                     {
