@@ -91,11 +91,8 @@
                         BorderWidth="1" 
                         MinimumWidthRequest="10" 
                         Clicked="OnAmountClicked"/>
-                    <Button Text="..." 
-                        BorderColor="#211DF2" 
-                        BorderWidth="1" 
-                        MinimumWidthRequest="10" 
-                        Clicked="OnAmountClicked"/>
+                    <Entry x:Name="More"
+                           WidthRequest="64"/>
                 </StackLayout>
                 <Button Text="Add" 
                         HorizontalOptions="Center"

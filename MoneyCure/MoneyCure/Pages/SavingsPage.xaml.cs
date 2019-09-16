@@ -22,6 +22,7 @@ namespace MoneyCure.Pages
         {
             await Navigation.PushAsync(new SettingsPage());
         }
+
         public void Addbt(object sender, EventArgs args)
         {
             if(((Button)sender).Text != null)
@@ -31,7 +32,7 @@ namespace MoneyCure.Pages
         public void OnAmountClicked(object sender, EventArgs args)
         {
             //change selected colors
-            
+            More.Text = ((Button)sender).Text;
         }
 
         //EVENT HANDLERS
