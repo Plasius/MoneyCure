@@ -26,6 +26,11 @@ namespace MoneyCure.Controller
             return db.Table<Transaction>().Where(i => i.Id == transId).FirstOrDefaultAsync();
         }
 
+        public Task<List<Transaction>> GetTransactions()
+        {
+            return db.Table<Transaction>().ToListAsync();
+        }
+
         public Task<List<Transaction>> GetExpenses()
         {
             return db.Table<Transaction>().Where(i => i.CatId>=0).ToListAsync();
