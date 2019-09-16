@@ -44,6 +44,7 @@ namespace MoneyCure.Data
 
             UserFirstName - string - the user's first name
             UserLastName - string - the user's last name
+
         */
 
         public int GetInt(string key, int def) {
@@ -82,6 +83,13 @@ namespace MoneyCure.Data
             }
 
             return def;
+        }
+        public void SetString(string key, string value)
+        {
+            if (Application.Current.Properties.ContainsKey(key))
+                Application.Current.Properties[key] = value;
+            else
+                Application.Current.Properties.Add(key, value);
         }
 
         public void SetInt(string key, int value) {
