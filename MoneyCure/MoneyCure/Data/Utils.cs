@@ -113,13 +113,6 @@ namespace MoneyCure.Data
             else
                 Application.Current.Properties.Add(key, value);
         }
-        public void SetDouble(string key, string value)
-        {
-            if (Application.Current.Properties.ContainsKey(key))
-                Application.Current.Properties[key] = value;
-            else
-                Application.Current.Properties.Add(key, value);
-        }
 
     }
 }
