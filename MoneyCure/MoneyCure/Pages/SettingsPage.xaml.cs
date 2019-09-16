@@ -20,16 +20,16 @@ namespace MoneyCure.Pages
 
         async void Subbt (object sender, EventArgs args)
         {
-            Data.Utils.GetInstance().SetString()
+            Data.Utils.GetInstance().SetString("UserFirstName", 0);
             if (Pin1.Text != Pin2.Text)
             {
                 DisplayAlert("Error","Pin doesn't match","Try again");
             }
             else
             {
-                if (Pin2 == null)
+                if (Pin1 == null)
                     DisplayAlert("Error", "You must set a PIN", "OK");
-                Data.Utils.GetInstance().SetInt("PINCode", -1);
+                Data.Utils.GetInstance().SetInt("PINCode", 0);
                 Navigation.PopAsync();
             }
         }
