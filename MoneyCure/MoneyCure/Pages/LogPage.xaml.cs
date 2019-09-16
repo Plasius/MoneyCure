@@ -45,6 +45,11 @@ namespace MoneyCure.Pages
             if (Selected)
             {
                 double am = double.Parse(Amount.Text);
+                if (DesCript.Text == null)
+                {
+                    DisplayAlert("Error","Description can't be empty","OK");
+                    return;
+                }
                 if (am > 0)
                 {
                     double loBal = Data.Utils.GetInstance().GetDouble("CheckingBalance", 0);
@@ -56,6 +61,7 @@ namespace MoneyCure.Pages
                         if (loBal < am)
                         {
                             DisplayAlert("Error", "You don't heve enough money", "I'm broke");
+                            return;
                         }
                         else
                         {
@@ -75,7 +81,6 @@ namespace MoneyCure.Pages
                         Transaction Tr = new Transaction(am, Day, DesCript.Text, -1);
                         App.SQLiteDb.CreateTransaction(Tr);
                     }
-
 
                     Navigation.PopAsync();
                 }
