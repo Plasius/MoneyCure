@@ -30,6 +30,7 @@
                 Placeholder="PIN"
                 HorizontalTextAlignment="Center"
                 FontSize="30"
+                IsPassword="True"
                 />
 
             <Button Text="Log in"
