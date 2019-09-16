@@ -26,7 +26,6 @@ namespace MoneyCure.Pages
             Transactions = new ObservableCollection<Transaction>(App.SQLiteDb.GetTransactions().Result);
 
             transactionsListView.ItemsSource = Transactions;
-            Transactions.Add(new Transaction(32.42, DateTime.Now, "wow", -1));
         }
 
 

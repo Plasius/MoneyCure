@@ -17,6 +17,7 @@ namespace MoneyCure.Model
         [NotNull]
         public DateTime DT { get; set; }
 
+        [NotNull]
         public string Name { get; set; }
 
         [NotNull]
