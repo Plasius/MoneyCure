@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using MoneyCure.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,9 +19,14 @@ namespace MoneyCure.Pages
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 
-            //get transactions
-            //Transactions = App.SQLiteDb.GetExpenses().Result;
+            //get balance
+            balanceLabel.Text = Data.Utils.GetInstance().GetDouble("CheckingBalance", 0).ToString();
 
+            //get transactions
+            Transactions = new ObservableCollection<Transaction>(App.SQLiteDb.GetTransactions().Result);
+
+            transactionsListView.ItemsSource = Transactions;
+            Transactions.Add(new Transaction(32.42, DateTime.Now, "wow", -1));
         }
 
 
@@ -47,5 +52,8 @@ namespace MoneyCure.Pages
         {
             App.Current.MainPage = new NavigationPage(new ReportsPage());
         }
+
+
+
     }
 }
