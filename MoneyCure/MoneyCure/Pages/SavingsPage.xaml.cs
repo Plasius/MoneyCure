@@ -24,7 +24,8 @@ namespace MoneyCure.Pages
         }
         public void Addbt(object sender, EventArgs args)
         {
-            int Am = Data.Utils.GetInstance().SetInt("Amount", ((Button)sender).Text;
+            if(((Button)sender).Text != null)
+                Data.Utils.GetInstance().SetInt("Amount", int.Parse(((Button)sender).Text));
         }
         
         public void OnAmountClicked(object sender, EventArgs args)
