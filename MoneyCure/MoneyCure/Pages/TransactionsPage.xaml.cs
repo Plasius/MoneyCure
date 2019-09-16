@@ -19,15 +19,19 @@ namespace MoneyCure.Pages
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 
+        }
+
+        protected override void OnAppearing()
+        {
             //get balance
             balanceLabel.Text = Data.Utils.GetInstance().GetDouble("CheckingBalance", 0).ToString();
 
             //get transactions
             Transactions = new ObservableCollection<Transaction>(App.SQLiteDb.GetTransactions().Result);
 
+            //bind transactions
             transactionsListView.ItemsSource = Transactions;
         }
-
 
         //EVENT HANDLERS
 
