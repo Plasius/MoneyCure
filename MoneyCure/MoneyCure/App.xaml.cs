@@ -28,9 +28,15 @@ namespace MoneyCure
 
         public App()
         {
+
             InitializeComponent();
 
+            //DEBUG
+            Data.Utils.GetInstance().SetInt("PINCode", 1234);
+
             MainPage = new NavigationPage(new LoginPage());
+
+
         }
 
         protected override void OnStart()

@@ -22,7 +22,15 @@ namespace MoneyCure.Pages
         }
         public  void OnButtonClicked(object sender, EventArgs args)
         {
-            App.Current.MainPage = new NavigationPage(new TransactionsPage());
+            //check if the passwords match
+            int toMatch = Data.Utils.GetInstance().GetInt("PINCode", -1);
+            if (toMatch == -1 || pinEntry.Text == null)
+                return;
+
+            if(int.Parse(pinEntry.Text) == toMatch)
+                App.Current.MainPage = new NavigationPage(new TransactionsPage());
+            else
+                Console.WriteLine("Invalid pass");
         }
 
     }
