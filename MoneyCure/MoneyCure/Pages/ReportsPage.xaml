@@ -35,8 +35,25 @@
             </RelativeLayout>
 
 
-            <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="Green">
-                
+            <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="green">
+                <StackLayout  Orientation="Horizontal" HorizontalOptions="Center" >
+
+                    
+                        <Image Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/arrow.png" />
+                    
+                        <Label Text="This month's income:"
+                        HorizontalOptions="StartAndExpand" 
+                   VerticalOptions="Center" 
+                   Margin="3" 
+                   FontSize="22"
+                  />
+                    
+                  
+                    
+                </StackLayout>
+                   
+                   
+               
                 
             </StackLayout>
 
