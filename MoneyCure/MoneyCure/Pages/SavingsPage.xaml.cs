@@ -47,7 +47,7 @@ namespace MoneyCure.Pages
 
                 App.SQLiteDb.CreateTransaction(new Model.Transaction(megtakaritando, DateTime.Now, "Savings", (int)Data.Utils.Categories.Savings));
 
-                Data.Utils.GetInstance().GetDouble("SavingsBalance", )
+                
             }
 
         }
