@@ -49,7 +49,7 @@ namespace MoneyCure.Pages
                 {
                     double loBal = Data.Utils.GetInstance().GetDouble("Balance", 0);
 
-                    DateTime Day = DateTime.Today;
+                    DateTime Day = DateTime.Now;
 
                     if (IsExpense)
                     {
@@ -61,6 +61,7 @@ namespace MoneyCure.Pages
                         {
                             am *= -1;
                             Transaction Tr = new Transaction(am, Day, DesCript.Text, picker.SelectedIndex);
+                            App.SQLiteDb.CreateTransaction(Tr);
                         }
                     }
                     else
@@ -69,6 +70,7 @@ namespace MoneyCure.Pages
 
 
                         Transaction Tr = new Transaction(am, Day, DesCript.Text, -1);
+                        App.SQLiteDb.CreateTransaction(Tr);
                     }
 
 
