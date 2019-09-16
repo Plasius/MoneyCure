@@ -71,7 +71,7 @@
                 </StackLayout>
 
                 <StackLayout>
-                      
+
                     <Label 
                          Margin="0,40,0,0"
                         Text="Chart report about expenses:"
@@ -80,8 +80,7 @@
                            />
 
                 </StackLayout>
-                
-                
+
             </StackLayout>
            
 
