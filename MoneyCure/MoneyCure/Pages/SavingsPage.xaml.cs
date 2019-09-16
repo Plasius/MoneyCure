@@ -46,13 +46,10 @@ namespace MoneyCure.Pages
                 Data.Utils.GetInstance().SetDouble("SavingsBalance", Data.Utils.GetInstance().GetDouble("SavingsBalance", 0) + megtakaritando);
 
                 App.SQLiteDb.CreateTransaction(new Model.Transaction(megtakaritando, DateTime.Now, "Savings", (int)Data.Utils.Categories.Savings));
+
+                Data.Utils.GetInstance().GetDouble("SavingsBalance", )
             }
 
-
-
-            if(((Button)sender).Text != null)
-                Data.Utils.GetInstance().SetInt("Amount", int.Parse(((Button)sender).Text));
-            Data.Utils.GetInstance().GetInt("Amount", -1);
         }
         
         public void OnAmountClicked(object sender, EventArgs args)

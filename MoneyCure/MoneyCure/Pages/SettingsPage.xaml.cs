@@ -24,14 +24,19 @@ namespace MoneyCure.Pages
             Data.Utils.GetInstance().SetString("UserLastName", "User");
             if (Pin1.Text != Pin2.Text)
             {
-                DisplayAlert("Error","Pin doesn't match","Try again");
+                await DisplayAlert("Error","Pin doesn't match","Try again");
+                return;
             }
             else
             {
                 if (Pin1 == null)
-                    DisplayAlert("Error", "You must set a PIN", "OK");
-                Data.Utils.GetInstance().SetInt("PINCode", 0);
-                Navigation.PopAsync();
+                {
+                    await DisplayAlert("Error", "You must set a PIN", "OK");
+                                    return;
+                }
+
+                Data.Utils.GetInstance().SetInt("PINCode", int.Parse(Pin1.Text));
+                await Navigation.PopAsync();
             }
             Data.Utils.GetInstance().SetInt("SavingsGoal", 0);
         }
