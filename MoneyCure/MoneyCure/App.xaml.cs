@@ -33,6 +33,7 @@ namespace MoneyCure
 
             //DEBUG
             Data.Utils.GetInstance().SetInt("PINCode", 1234);
+            App.SQLiteDb.DeleteAllTransactions();
 
             MainPage = new NavigationPage(new LoginPage());
 
