@@ -11,10 +11,9 @@
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="5*" />
-                <RowDefinition Height="2*" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -27,8 +26,8 @@
                     Clicked="OnSettingsClicked" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50" Margin="10"
                     Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/settings.png"/>
 
-                <ImageButton RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}"
-                        BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Padding="0,25,0,0"
+                <ImageButton RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-110}"
+                        BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Margin="10"
                         Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/Logo.png" />
 
                 <ImageButton RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-60}"
@@ -38,7 +37,7 @@
                 
             </RelativeLayout>
 
-
+            <StackLayout Grid.Row="1" Grid.Column="0">
             <Label HorizontalOptions="Center" x:Name="balanceLabel" Grid.Row="1" Grid.Column="0" FontSize="42" Text ="Loading..."/>
 
             <ListView  Grid.Row="2" Grid.Column="0" Margin="10" x:Name="transactionsListView">
@@ -55,7 +54,10 @@
 
             </ListView>
 
-            <Grid  Grid.Row="3" Grid.Column="0" VerticalOptions="End">
+            </StackLayout>
+
+
+            <Grid  Grid.Row="2" Grid.Column="0" VerticalOptions="End">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="9*" />

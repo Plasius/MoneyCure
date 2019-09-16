@@ -14,6 +14,7 @@ namespace MoneyCure.Pages
     public partial class TransactionsPage : ContentPage
     {
         ObservableCollection<Model.Transaction> Transactions;
+
         public TransactionsPage()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace MoneyCure.Pages
         protected override void OnAppearing()
         {
             //get balance
-            balanceLabel.Text = Data.Utils.GetInstance().GetDouble("CheckingBalance", 0).ToString();
+            balanceLabel.Text = Data.Utils.GetInstance().GetDouble("CheckingBalance", 0).ToString() + " EUR";
 
             //get transactions
             Transactions = new ObservableCollection<Transaction>(App.SQLiteDb.GetTransactions().Result);

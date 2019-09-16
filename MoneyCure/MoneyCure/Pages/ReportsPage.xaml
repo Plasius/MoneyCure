@@ -11,9 +11,9 @@
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*" />
-                <RowDefinition Height="6*" />
-                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -26,11 +26,9 @@
                     Clicked="OnSettingsClicked" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50" Margin="10"
                     Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/settings.png"/>
 
-                <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
-                    <ImageButton HorizontalOptions="Center"
-                        BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Padding="0,25,0,0"
+                <ImageButton RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-110}"
+                        BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Margin="10"
                         Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/Logo.png" />
-                </StackLayout>
 
             </RelativeLayout>
 

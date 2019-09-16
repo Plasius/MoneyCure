@@ -25,6 +25,7 @@ namespace MoneyCure.Pages
 
                 Data.Utils.GetInstance().SetInt("SavingsGoal", int.Parse(Goal.Text));
                 Data.Utils.GetInstance().SetInt("PINCode", int.Parse(Pin1.Text));
+                Data.Utils.GetInstance().SetBool("StayLoggedIn", false);
                 await Navigation.PopAsync();
 
             }
