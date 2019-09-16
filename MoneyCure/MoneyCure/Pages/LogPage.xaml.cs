@@ -47,7 +47,7 @@ namespace MoneyCure.Pages
                 double am = double.Parse(Amount.Text);
                 if (am > 0)
                 {
-                    double loBal = Data.Utils.GetInstance().GetDouble("Balance", 0);
+                    double loBal = Data.Utils.GetInstance().GetDouble("CheckingBalance", 0);
 
                     DateTime Day = DateTime.Now;
 
@@ -60,13 +60,16 @@ namespace MoneyCure.Pages
                         else
                         {
                             am *= -1;
+
+                            Data.Utils.GetInstance().SetDouble("CheckingBalance", am + loBal);
+
                             Transaction Tr = new Transaction(am, Day, DesCript.Text, picker.SelectedIndex);
                             App.SQLiteDb.CreateTransaction(Tr);
                         }
                     }
                     else
                     {
-                        Data.Utils.GetInstance().SetDouble("Balance",am+loBal);
+                        Data.Utils.GetInstance().SetDouble("CheckingBalance",am+loBal);
 
 
                         Transaction Tr = new Transaction(am, Day, DesCript.Text, -1);
