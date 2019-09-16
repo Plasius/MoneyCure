@@ -26,18 +26,18 @@ namespace MoneyCure.Controller
             return db.Table<Transaction>().Where(i => i.Id == transId).FirstOrDefaultAsync();
         }
 
-        public Task<Transaction> GetExpenses()
+        public Task<List<Transaction>> GetExpenses()
         {
-            return db.Table<Transaction>().Where(i => i.CatId>=0).FirstOrDefaultAsync();
+            return db.Table<Transaction>().Where(i => i.CatId>=0).ToListAsync();
         }
 
-        public Task<Transaction> GetSavings()
+        public Task<List<Transaction>> GetSavings()
         {
-            return db.Table<Transaction>().Where(i => i.CatId == (int) Data.Utils.Categories.Savings).FirstOrDefaultAsync();
+            return db.Table<Transaction>().Where(i => i.CatId == (int) Data.Utils.Categories.Savings).ToListAsync();
         }
 
-        public Task<Transaction> GetIncomes() {
-            return db.Table<Transaction>().Where(i => i.CatId == (int) Data.Utils.Categories.Income).FirstOrDefaultAsync();
+        public Task<List<Transaction>> GetIncomes() {
+            return db.Table<Transaction>().Where(i => i.CatId == (int)Data.Utils.Categories.Income).ToListAsync();
         }
 
         //Delete
