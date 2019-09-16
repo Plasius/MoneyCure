@@ -49,6 +49,17 @@ namespace MoneyCure.Data
             return def;
         }
 
+        public double GetDouble(string key, double def)
+        {
+            if (Application.Current.Properties.ContainsKey(key))
+            {
+                return (double)Application.Current.Properties[key];
+            }
+
+
+            return def;
+        }
+
         public bool GetBool(string key, bool def) {
             if (Application.Current.Properties.ContainsKey(key))
             {
@@ -59,6 +70,14 @@ namespace MoneyCure.Data
         }
 
         public void SetInt(string key, int value) {
+            if (Application.Current.Properties.ContainsKey(key))
+                Application.Current.Properties[key] = value;
+            else
+                Application.Current.Properties.Add(key, value);
+        }
+
+        public void SetDouble(string key, double value)
+        {
             if (Application.Current.Properties.ContainsKey(key))
                 Application.Current.Properties[key] = value;
             else
