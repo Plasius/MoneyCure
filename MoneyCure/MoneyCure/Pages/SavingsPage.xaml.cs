@@ -24,12 +24,13 @@ namespace MoneyCure.Pages
         }
         public void Addbt(object sender, EventArgs args)
         {
-
+            int Am = Data.Utils.GetInstance().SetInt("Amount", ((Button)sender).Text;
         }
         
         public void OnAmountClicked(object sender, EventArgs args)
         {
             //change selected colors
+            
         }
 
         //EVENT HANDLERS

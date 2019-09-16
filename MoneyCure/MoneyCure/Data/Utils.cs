@@ -37,7 +37,7 @@ namespace MoneyCure.Data
             PINCode - int - 4-digit pin code of the user
             StayLoggedIn - bool - keeps track of the user preference whether to log in automatically
             SavingsGoal - int - a user-defined target to reach through saving up money
-
+            Amount - int - the amount of saved money
         */
 
         public int GetInt(string key, int def) {
