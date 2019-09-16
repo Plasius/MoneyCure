@@ -1,11 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace MoneyCure.Data
 {
     class Utils
     {
+        static Utils instance;
+
+        public static Utils GetInstance() {
+            if (instance == null)
+                instance = new Utils();
+
+            return instance;
+        }
+
         public enum Categories
         {
             Income = -1,
@@ -21,8 +31,40 @@ namespace MoneyCure.Data
             Health = 9
         }
 
-        public int PINCode { get; set; }
-        public int SavingsGoal { get; set; }
+
+        /*
+         STORED DATA:
+            PINCode - int - 4-digit pin code of the user
+            StayLoggedIn - bool - keeps track of the user preference whether to log in automatically
+            SavingsGoal - int - a user-defined target to reach through saving up money
+            Amount - int - the amount of saved money
+        */
+
+        public int GetInt(string key, int def) {
+            if(Application.Current.Properties.ContainsKey(key)){
+                return (int)Application.Current.Properties[key];
+            }
+
+            return def;
+        }
+
+        public bool GetBool(string key, bool def) {
+            if (Application.Current.Properties.ContainsKey(key))
+            {
+                return (bool)Application.Current.Properties[key];
+            }
+
+            return def;
+        }
+
+        public void SetInt(string key, int value) {
+            Application.Current.Properties.Add(key, value);
+        }
+
+        public void SetBool(string key, bool value) {
+            Application.Current.Properties.Add(key, value);
+        }
+
 
     }
 }
