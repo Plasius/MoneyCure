@@ -49,7 +49,7 @@ namespace MoneyCure.Pages
                 {
                     double loBal = Data.Utils.GetInstance().GetDouble("Balance", 0);
 
-                    DateTime Day = DateTime.Today;
+                    DateTime Day = DateTime.Now;
 
                     if (IsExpense)
                     {
