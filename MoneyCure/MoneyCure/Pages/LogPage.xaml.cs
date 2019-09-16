@@ -47,17 +47,30 @@ namespace MoneyCure.Pages
                 double am = double.Parse(Amount.Text);
                 if (am > 0)
                 {
-                    if (IsExpense) { am *= -1; }
+                    double loBal = Data.Utils.GetInstance().GetDouble("Balance", 0);
 
-                    DateTime Day = DateTime.Today;
+                    DateTime Day = DateTime.Now;
 
                     if (IsExpense)
                     {
-                        Transaction Tr = new Transaction(am, Day, DesCript.Text, picker.SelectedIndex);
+                        if (loBal < am)
+                        {
+                            DisplayAlert("Error", "You don't heve enough money", "I'm broke");
+                        }
+                        else
+                        {
+                            am *= -1;
+                            Transaction Tr = new Transaction(am, Day, DesCript.Text, picker.SelectedIndex);
+                            App.SQLiteDb.CreateTransaction(Tr);
+                        }
                     }
                     else
                     {
+                        Data.Utils.GetInstance().SetDouble("Balance",am+loBal);
+
+
                         Transaction Tr = new Transaction(am, Day, DesCript.Text, -1);
+                        App.SQLiteDb.CreateTransaction(Tr);
                     }
 
 

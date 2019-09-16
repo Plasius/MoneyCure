@@ -51,16 +51,16 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <BoxView Grid.Row="0" Grid.Column="0" BackgroundColor="Aqua"/>
-                    <BoxView Grid.Row="0" Grid.Column="1" BackgroundColor="Aqua"/>
-                    <BoxView Grid.Row="0" Grid.Column="2" BackgroundColor="Aqua"/>
-                    <BoxView Grid.Row="0" Grid.Column="3" BackgroundColor="Aqua"/>
-                    <BoxView Grid.Row="0" Grid.Column="4" BackgroundColor="Aqua"/>
-                    <BoxView Grid.Row="0" Grid.Column="5" BackgroundColor="Aqua"/>
-                    <BoxView Grid.Row="0" Grid.Column="6" BackgroundColor="Aqua"/>
-                    <BoxView Grid.Row="0" Grid.Column="7" BackgroundColor="Aqua"/>
-                    <BoxView Grid.Row="0" Grid.Column="8" BackgroundColor="Aqua"/>
-                    <BoxView Grid.Row="0" Grid.Column="9" BackgroundColor="Aqua"/>
+                    <BoxView x:Name="B1"  Grid.Row="0" Grid.Column="0" BackgroundColor="LightGray"/>
+                    <BoxView x:Name="B2" Grid.Row="0" Grid.Column="1" BackgroundColor="LightGray"/>
+                    <BoxView x:Name="B3" Grid.Row="0" Grid.Column="2" BackgroundColor="LightGray"/>
+                    <BoxView x:Name="B4" Grid.Row="0" Grid.Column="3" BackgroundColor="LightGray"/>
+                    <BoxView x:Name="B5" Grid.Row="0" Grid.Column="4" BackgroundColor="LightGray"/>
+                    <BoxView x:Name="B6" Grid.Row="0" Grid.Column="5" BackgroundColor="LightGray"/>
+                    <BoxView x:Name="B7" Grid.Row="0" Grid.Column="6" BackgroundColor="LightGray"/>
+                    <BoxView x:Name="B8" Grid.Row="0" Grid.Column="7" BackgroundColor="LightGray"/>
+                    <BoxView x:Name="B9" Grid.Row="0" Grid.Column="8" BackgroundColor="LightGray"/>
+                    <BoxView x:Name="B10" Grid.Row="0" Grid.Column="9" BackgroundColor="LightGray"/>
                 </Grid>
 
 
@@ -75,22 +75,26 @@
                         BorderColor="#211DF2" 
                         BorderWidth="1" 
                         MinimumWidthRequest="10" 
-                        Clicked="OnAmountClicked"/>
+                        Clicked="OnAmountClicked"
+                            x:Name="Ambt1"/>
                     <Button Text="10" 
                         BorderColor="#211DF2" 
                         BorderWidth="1" 
                         MinimumWidthRequest="10" 
-                        Clicked="OnAmountClicked"/>
+                        Clicked="OnAmountClicked"
+                            x:Name="Ambt2"/>
                     <Button Text="25" 
                         BorderColor="#211DF2" 
                         BorderWidth="1" 
                         MinimumWidthRequest="10" 
-                        Clicked="OnAmountClicked"/>
+                        Clicked="OnAmountClicked"
+                            x:Name="Ambt3"/>
                     <Button Text="50" 
                         BorderColor="#211DF2" 
                         BorderWidth="1" 
                         MinimumWidthRequest="10" 
-                        Clicked="OnAmountClicked"/>
+                        Clicked="OnAmountClicked"
+                            x:Name="Ambt4"/>
                     <Entry x:Name="More"
                            WidthRequest="64"/>
                 </StackLayout>
