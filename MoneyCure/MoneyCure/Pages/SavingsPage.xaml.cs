@@ -25,14 +25,39 @@ namespace MoneyCure.Pages
 
         public void Addbt(object sender, EventArgs args)
         {
+            /*
+             check CheckingBalance ha van eleg penz felrerakni
+             levonjuk a penzt a CheckingBalancebol
+             Hozzaadjuk SavingsBalance
+             new Transaction category==savings
+             
+             */
+            if (More.Text == null)
+                return;
+
+            int megtakaritando = int.Parse(More.Text);
+            if (Data.Utils.GetInstance().GetDouble("CheckingBalance", 0) >= megtakaritando) {
+                Data.Utils.GetInstance().SetDouble("CheckingBalance", Data.Utils.GetInstance().GetDouble("CheckingBalance", 0)-megtakaritando);
+
+                Data.Utils.GetInstance().SetDouble("SavingsBalance", Data.Utils.GetInstance().GetDouble("SavingsBalance", 0) + megtakaritando);
+            }
+
+
+
             if(((Button)sender).Text != null)
                 Data.Utils.GetInstance().SetInt("Amount", int.Parse(((Button)sender).Text));
+            Data.Utils.GetInstance().GetInt("Amount", -1);
         }
         
         public void OnAmountClicked(object sender, EventArgs args)
         {
             //change selected colors
             More.Text = ((Button)sender).Text;
+            Ambt1.BackgroundColor = Color.LightGray;
+            Ambt2.BackgroundColor = Color.LightGray;
+            Ambt3.BackgroundColor = Color.LightGray;
+            Ambt4.BackgroundColor = Color.LightGray;
+            ((Button)sender).BackgroundColor = Color.LightSkyBlue;
         }
 
         //EVENT HANDLERS
