@@ -40,12 +40,22 @@
                     Margin="0,25,0,25"
                     FontSize="22"
                     CornerRadius="15"
-                   Clicked="OnButtonClicked"/>
+                   Clicked="OnLoginClicked"/>
+
+            <Button Text="Register"
+                    HorizontalOptions="Center"
+                    WidthRequest="100"
+                    BackgroundColor="LightSkyBlue"
+                    Margin="0,25,0,25"
+                    FontSize="22"
+                    CornerRadius="15"
+                   Clicked="OnRegisterClicked"/>
 
 
             <StackLayout HorizontalOptions="Center" Orientation="Horizontal" >
 
                 <CheckBox
+                      x:Name="checker"
                       Color="Black"  />
 
                 <Label Text="Stay logged in"

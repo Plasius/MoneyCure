@@ -28,14 +28,12 @@ namespace MoneyCure
 
         public App()
         {
-
             InitializeComponent();
 
-            //DEBUG
-            Data.Utils.GetInstance().SetInt("PINCode", 1234);
-            App.SQLiteDb.DeleteAllTransactions();
-
-            MainPage = new NavigationPage(new LoginPage());
+            if (Data.Utils.GetInstance().GetBool("StayLoggedIn", false))
+                MainPage = new NavigationPage(new TransactionsPage());
+            else
+                MainPage = new NavigationPage(new LoginPage());
 
 
         }

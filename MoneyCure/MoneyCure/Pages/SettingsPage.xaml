@@ -14,15 +14,15 @@
 
                 <StackLayout Margin="20,20,0,0" >
                     <Label Text="First Name" Margin="10,0,0,0"/>
-                    <Entry HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150"  HeightRequest="20" Keyboard="Chat"   />
+                    <Entry HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150"  HeightRequest="50"  />
                     <Label Text="Last Name" Margin="10,20,0,0"/>
-                    <Entry HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" HeightRequest="20" Keyboard="Chat"/>
+                    <Entry HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" HeightRequest="50"/>
                     <Label Text="PIN" Margin="10,30,0,0"/>
                     <Entry IsPassword="True"
                        Keyboard="Numeric"
                        MaxLength="4"
                        WidthRequest="150"
-                       HeightRequest="20"
+                       HeightRequest="50"
                        HorizontalOptions="Start" 
                        VerticalOptions="Center"
                            x:Name="Pin1"/>
@@ -31,14 +31,14 @@
                        Keyboard="Numeric"
                        MaxLength="4"
                        WidthRequest="150"
-                       HeightRequest="20"
+                       HeightRequest="50"
                        HorizontalOptions="Start"
                        VerticalOptions="Center"
                            x:Name="Pin2"/>
                     <Label Text="Set your saving goal" Margin="10,20,0,0"/>
                     <Entry Keyboard="Numeric"
                            WidthRequest="150"
-                           HeightRequest="20"
+                           HeightRequest="50"
                            HorizontalOptions="Start" 
                            VerticalOptions="Center"/>
                 </StackLayout>

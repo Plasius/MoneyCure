@@ -17,20 +17,31 @@ namespace MoneyCure.Pages
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            pinEntry.Focus();
 
         }
-        public  void OnButtonClicked(object sender, EventArgs args)
+
+        public async void OnRegisterClicked(object sender, EventArgs eventArgs) {
+            await Navigation.PushAsync(new SettingsPage());
+        }
+
+        public async void OnLoginClicked(object sender, EventArgs args)
         {
             //check if the passwords match
             int toMatch = Data.Utils.GetInstance().GetInt("PINCode", -1);
             if (toMatch == -1 || pinEntry.Text == null)
+            {
+                await DisplayAlert("Invalid PIN", "Insert your correct PIN code.", "OK");
                 return;
+            }
 
-            if(int.Parse(pinEntry.Text) == toMatch)
+            if (int.Parse(pinEntry.Text) == toMatch)
+            {
+                //successfully logged in
+                Data.Utils.GetInstance().SetBool("StayLoggedIn", checker.IsChecked);
                 App.Current.MainPage = new NavigationPage(new TransactionsPage());
+            }
             else
-                Console.WriteLine("Invalid pass");
+                await DisplayAlert("Invalid PIN", "Insert your correct PIN code.", "OK");
         }
 
     }
