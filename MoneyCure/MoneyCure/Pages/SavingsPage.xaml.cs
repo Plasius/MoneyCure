@@ -33,13 +33,19 @@ namespace MoneyCure.Pages
              
              */
             if (More.Text == null)
+            {
+                DisplayAlert("Error", "Can't add saving", "OK");
                 return;
+            }
+                
 
             int megtakaritando = int.Parse(More.Text);
             if (Data.Utils.GetInstance().GetDouble("CheckingBalance", 0) >= megtakaritando) {
                 Data.Utils.GetInstance().SetDouble("CheckingBalance", Data.Utils.GetInstance().GetDouble("CheckingBalance", 0)-megtakaritando);
 
                 Data.Utils.GetInstance().SetDouble("SavingsBalance", Data.Utils.GetInstance().GetDouble("SavingsBalance", 0) + megtakaritando);
+
+                App.SQLiteDb.CreateTransaction(new Model.Transaction(megtakaritando, DateTime.Now, "Savings", (int)Data.Utils.Categories.Savings));
             }
 
 
