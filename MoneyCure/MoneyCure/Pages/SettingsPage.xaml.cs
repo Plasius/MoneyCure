@@ -33,7 +33,7 @@ namespace MoneyCure.Pages
                 Data.Utils.GetInstance().SetInt("PINCode", 0);
                 Navigation.PopAsync();
             }
-            Data.Utils.GetInstance().SetInt()
+            Data.Utils.GetInstance().SetInt("SavingsGoal", 0);
         }
     }
 }
