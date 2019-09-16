@@ -42,9 +42,6 @@ namespace MoneyCure.Data
             SavingsGoal - int - a user-defined target to reach through saving up money
             SavingsBalance - double - amount of money saved up by the user
 
-            UserFirstName - string - the user's first name
-            UserLastName - string - the user's last name
-
         */
 
         public int GetInt(string key, int def) {

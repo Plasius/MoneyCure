@@ -20,25 +20,18 @@ namespace MoneyCure.Pages
 
         async void Subbt (object sender, EventArgs args)
         {
-            Data.Utils.GetInstance().SetString("UserFirstName", "User");
-            Data.Utils.GetInstance().SetString("UserLastName", "User");
-            if (Pin1.Text != Pin2.Text)
+            if (Pin1.Text != null && Pin1.Text == Pin2.Text && Goal.Text != null)
             {
-                await DisplayAlert("Error","Pin doesn't match","Try again");
-                return;
-            }
-            else
-            {
-                if (Pin1 == null)
-                {
-                    await DisplayAlert("Error", "You must set a PIN", "OK");
-                                    return;
-                }
 
+                Data.Utils.GetInstance().SetInt("SavingsGoal", int.Parse(Goal.Text));
                 Data.Utils.GetInstance().SetInt("PINCode", int.Parse(Pin1.Text));
                 await Navigation.PopAsync();
+
             }
-            Data.Utils.GetInstance().SetInt("SavingsGoal", 0);
+            else {
+                await DisplayAlert("Error", "Information is not valid.", "OK");
+            }
+
         }
     }
 }
