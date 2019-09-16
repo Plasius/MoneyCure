@@ -35,27 +35,55 @@
             </RelativeLayout>
 
 
-            <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="green">
-                <StackLayout  Orientation="Horizontal" HorizontalOptions="Center" >
+            <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" >
+                <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" >
 
-                    
+
+                    <Image Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/arrow.png" />
+
+                    <Label Text="This month's income:"
+                        HorizontalOptions="StartAndExpand" 
+                   VerticalOptions="Center" 
+                   Margin="3" 
+                   FontSize="22" />
+                </StackLayout>
+
+
+                <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" >
                         <Image Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/arrow.png" />
-                    
-                        <Label Text="This month's income:"
+
+                        <Label Text="Expences:"
                         HorizontalOptions="StartAndExpand" 
                    VerticalOptions="Center" 
                    Margin="3" 
                    FontSize="22"
                   />
-                    
-                  
-                    
+                   </StackLayout>
+
+                <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" >
+                    <Image Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/arrow.png" />
+
+                    <Label Text="Savings:"
+                        HorizontalOptions="StartAndExpand" 
+                       VerticalOptions="Center" 
+                      Margin="3" 
+                     FontSize="22" />
                 </StackLayout>
-                   
-                   
-               
+
+                <StackLayout>
+                      
+                    <Label 
+                         Margin="0,40,0,0"
+                        Text="Chart report about expenses:"
+                          TextColor="LightSlateGray" 
+                        FontSize="17"
+                           />
+
+                </StackLayout>
+                
                 
             </StackLayout>
+           
 
             <Grid  Grid.Row="2" Grid.Column="0" VerticalOptions="End">
                 <Grid.RowDefinitions>
