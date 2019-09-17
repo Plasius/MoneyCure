@@ -62,7 +62,10 @@
                     <BoxView x:Name="B9" Grid.Row="0" Grid.Column="8" BackgroundColor="LightGray"/>
                     <BoxView x:Name="B10" Grid.Row="0" Grid.Column="9" BackgroundColor="LightGray"/>
                 </Grid>
-                <Label Text="Loading..." HorizontalOptions="End" Margin="0,0,15,0"/>
+                <Label Text="Loading..." 
+                       HorizontalOptions="End" 
+                       Margin="0,0,15,0"
+                       x:Name="SaveNum"/>
 
                 <Label Text="Add money" 
                    HorizontalOptions="Center" 
