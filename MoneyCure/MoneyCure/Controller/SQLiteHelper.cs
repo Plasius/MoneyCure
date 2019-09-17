@@ -28,7 +28,7 @@ namespace MoneyCure.Controller
 
         public Task<List<Transaction>> GetTransactions()
         {
-            return db.Table<Transaction>().ToListAsync();
+            return db.Table<Transaction>().OrderByDescending(i => i.DT).ToListAsync();
         }
 
         public Task<List<Transaction>> GetExpenses()

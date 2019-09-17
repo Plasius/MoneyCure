@@ -44,6 +44,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell
+                            IsEnabled="False"
                             Text="{Binding Name}"
                             Detail="{Binding Amount}"
                             >
