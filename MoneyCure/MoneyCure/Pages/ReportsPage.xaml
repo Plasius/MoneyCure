@@ -32,8 +32,11 @@
 
             </RelativeLayout>
 
-
             <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" >
+
+                <ScrollView>
+                    <StackLayout>
+                
                 <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" >
 
 
@@ -48,15 +51,15 @@
 
 
                 <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" >
-                        <Image Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/arrow.png" />
+                    <Image Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/arrow.png" />
 
-                        <Label Text="Expences:"
+                    <Label Text="Expences:"
                         HorizontalOptions="StartAndExpand" 
                    VerticalOptions="Center" 
                    Margin="3" 
                    FontSize="22"
                   />
-                   </StackLayout>
+                </StackLayout>
 
                 <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" >
                     <Image Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/arrow.png" />
@@ -79,9 +82,36 @@
 
                 </StackLayout>
 
-            </StackLayout>
-           
+                <Grid x:Name="expenseGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
+                    <Label Text="Category" Grid.Row="0" Grid.Column="0"/>
+                    <Label Text="Amount" Grid.Row="0" Grid.Column="1"/>
+                    <Label Text="%" Grid.Row="0" Grid.Column="2"/>
+
+                </Grid>
+                    </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            
+            
             <Grid  Grid.Row="2" Grid.Column="0" VerticalOptions="End">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />

@@ -33,5 +33,49 @@ namespace MoneyCure.Pages
         {
             App.Current.MainPage = new NavigationPage(new TransactionsPage());
         }
+
+        protected override void OnAppearing()
+        {
+            var lst = App.SQLiteDb.GetExpenses().Result;
+            double[] categoriesAmount = new double[10];
+
+            double transSum = 0;
+
+            foreach (var trans in lst) {
+                categoriesAmount[trans.CatId] += Math.Abs(trans.Amount);
+                transSum += Math.Abs(trans.Amount);
+            }
+
+            for (int i=0; i<10; i++) {
+                if (categoriesAmount[i] > 0) {
+
+                }
+            }
+
+            Label temp;
+            for( int i=0; i<10; i++)
+            {
+                for(int j=0; j<3; j++)
+                {
+                    switch (j) {
+                        case 0:
+                            temp = new Label { Text = ((Data.Utils.Categories)i).ToString() };
+                            expenseGrid.Children.Add(temp, j, i+1);
+                            break;
+                        case 1:
+                            temp = new Label { Text = categoriesAmount[i].ToString() };
+                            expenseGrid.Children.Add(temp, j, i+1);
+                            break;
+                        case 2:
+                            temp = new Label { Text = (categoriesAmount[i]*100/transSum).ToString() };
+                            expenseGrid.Children.Add(temp, j, i+1);
+                            break;
+
+                    }
+                }
+            }
+
+
+        }
     }
 }
