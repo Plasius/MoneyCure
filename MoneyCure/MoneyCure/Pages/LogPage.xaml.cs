@@ -20,6 +20,7 @@ namespace MoneyCure.Pages
             InitializeComponent();
             var list = Enum.GetValues(typeof(Utils.Categories)).Cast<Utils.Categories>().ToList();
             list.Remove(Utils.Categories.Income);
+            list.Remove(Utils.Categories.Savings);
             picker.ItemsSource = list;
         }
 
@@ -69,7 +70,7 @@ namespace MoneyCure.Pages
 
                             Data.Utils.GetInstance().SetDouble("CheckingBalance", am + loBal);
 
-                            Transaction Tr = new Transaction(am, Day, DesCript.Text, picker.SelectedIndex);
+                            Transaction Tr = new Transaction(am, Day, DesCript.Text, picker.SelectedIndex+1);
                             App.SQLiteDb.CreateTransaction(Tr);
                         }
                     }
