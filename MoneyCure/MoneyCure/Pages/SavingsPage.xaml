@@ -34,7 +34,7 @@
 
 
             <StackLayout Grid.Row="1" Grid.Column="0">
-                <Grid Padding="15">
+                <Grid Padding="15" Margin="0,20,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
@@ -62,7 +62,7 @@
                     <BoxView x:Name="B9" Grid.Row="0" Grid.Column="8" BackgroundColor="LightGray"/>
                     <BoxView x:Name="B10" Grid.Row="0" Grid.Column="9" BackgroundColor="LightGray"/>
                 </Grid>
-
+                <Label Text="Loading..." HorizontalOptions="End" Margin="0,0,15,0"/>
 
                 <Label Text="Add money" 
                    HorizontalOptions="Center" 
@@ -96,7 +96,7 @@
                         Clicked="OnAmountClicked"
                             x:Name="Ambt4"/>
                     <Entry x:Name="More"
-                           WidthRequest="64"/>
+                           WidthRequest="64" Keyboard="Numeric"/>
                 </StackLayout>
                 <Button Text="Add" 
                         HorizontalOptions="Center"
