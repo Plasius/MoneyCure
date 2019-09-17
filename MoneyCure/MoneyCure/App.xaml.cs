@@ -30,7 +30,7 @@ namespace MoneyCure
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new TransactionsPage());
+            MainPage = new NavigationPage(new LoginPage());
 
         }
 
