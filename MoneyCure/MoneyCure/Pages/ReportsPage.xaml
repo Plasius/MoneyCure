@@ -82,7 +82,7 @@
 
                 </StackLayout>
 
-                <Grid x:Name="expenseGrid">
+                        <Grid x:Name="expenseGrid" BackgroundColor="LightGray" Margin="10"  >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
@@ -96,15 +96,15 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions >
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Label Text="Category" Grid.Row="0" Grid.Column="0"/>
-                    <Label Text="Amount" Grid.Row="0" Grid.Column="1"/>
-                    <Label Text="%" Grid.Row="0" Grid.Column="2"/>
+                            <Label Text="Category" BackgroundColor="Silver" Grid.Row="0" Grid.Column="0" />
+                            <Label Text="Amount" BackgroundColor="Silver" Grid.Row="0" Grid.Column="1"/>
+                            <Label Text="%" Grid.Row="0" BackgroundColor="Silver" Grid.Column="2" />
 
                 </Grid>
                     </StackLayout>
