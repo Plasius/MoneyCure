@@ -36,43 +36,54 @@ namespace MoneyCure.Pages
 
         protected override void OnAppearing()
         {
-            var lst = App.SQLiteDb.GetExpenses().Result;
+            var lst = App.SQLiteDb.GetTransactions().Result;
             double[] categoriesAmount = new double[10];
 
-            double transSum = 0;
+            double expensesSum = 0;
+            double incomeSum = 0;
 
             foreach (var trans in lst) {
-                categoriesAmount[trans.CatId] += Math.Abs(trans.Amount);
-                transSum += Math.Abs(trans.Amount);
-            }
 
-            for (int i=0; i<10; i++) {
-                if (categoriesAmount[i] > 0) {
-
+                if (trans.CatId == -1) {
+                    incomeSum += Math.Abs(trans.Amount);
+                    continue;
                 }
+
+                categoriesAmount[trans.CatId] += Math.Abs(trans.Amount);
+                expensesSum += Math.Abs(trans.Amount);
+
             }
+
+            incomeLabel.Text = incomeSum.ToString() + " EUR";
+            savingsLabel.Text = categoriesAmount[0].ToString() + " EUR";
+            expenseLabel.Text = expensesSum.ToString() + " EUR";
 
             Label temp;
+            int rowIndex = 1;
             for( int i=0; i<10; i++)
             {
+                if (categoriesAmount[i] == 0)
+                    continue;
+
                 for(int j=0; j<3; j++)
                 {
                     switch (j) {
                         case 0:
-                            temp = new Label { Text = ((Data.Utils.Categories)i).ToString() };
-                            expenseGrid.Children.Add(temp, j, i+1);
+                            temp = new Label { Text = ((Data.Utils.Categories)i).ToString(), FontSize = 20, HorizontalTextAlignment=TextAlignment.Center };
+                            expenseGrid.Children.Add(temp, j, rowIndex);
                             break;
                         case 1:
-                            temp = new Label { Text = categoriesAmount[i].ToString() };
-                            expenseGrid.Children.Add(temp, j, i+1);
+                            temp = new Label { Text = Math.Round(categoriesAmount[i], 2).ToString(), FontSize = 20, HorizontalTextAlignment = TextAlignment.Center };
+                            expenseGrid.Children.Add(temp, j, rowIndex);
                             break;
                         case 2:
-                            temp = new Label { Text = (categoriesAmount[i]*100/transSum).ToString() };
-                            expenseGrid.Children.Add(temp, j, i+1);
+                            temp = new Label { Text = Math.Round((categoriesAmount[i]*100/ expensesSum), 2).ToString(), FontSize = 20, HorizontalTextAlignment = TextAlignment.Center };
+                            expenseGrid.Children.Add(temp, j, rowIndex);
                             break;
 
                     }
                 }
+                rowIndex++;
             }
 
 
