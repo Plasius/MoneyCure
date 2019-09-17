@@ -47,19 +47,6 @@
                     CornerRadius="15"
                    Clicked="OnRegisterClicked"/>
 
-
-            <StackLayout HorizontalOptions="Center" Orientation="Horizontal" >
-
-                <CheckBox
-                      x:Name="checker"
-                      Color="Black"  />
-
-                <Label Text="Stay logged in"
-                       VerticalTextAlignment="Center"
-                       FontSize="22"
-                       />
-
-            </StackLayout>
         </StackLayout>
 
     </RelativeLayout>

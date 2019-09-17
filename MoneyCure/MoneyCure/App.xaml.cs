@@ -30,11 +30,7 @@ namespace MoneyCure
         {
             InitializeComponent();
 
-            if (Data.Utils.GetInstance().GetBool("StayLoggedIn", false))
-                MainPage = new NavigationPage(new TransactionsPage());
-            else
-                MainPage = new NavigationPage(new LoginPage());
-
+            MainPage = new NavigationPage(new LoginPage());
 
         }
 
