@@ -3,10 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:MoneyCure.Pages"
              mc:Ignorable="d"
              BackgroundImageSource="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/wallpaper.jpg"
              x:Class="MoneyCure.Pages.TransactionsPage">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:CategoryConverter x:Key="CategoryConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
 
         <Grid>
@@ -40,16 +47,37 @@
             <StackLayout Grid.Row="1" Grid.Column="0">
             <Label HorizontalOptions="Center" x:Name="balanceLabel" Grid.Row="1" Grid.Column="0" FontSize="42" Text ="Loading..."/>
 
-            <ListView  Grid.Row="2" Grid.Column="0" Margin="10" x:Name="transactionsListView">
+            <ListView  RowHeight="140" Grid.Row="2" Grid.Column="0" Margin="10" x:Name="transactionsListView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell
-                            IsEnabled="False"
-                            Text="{Binding Name}"
-                            Detail="{Binding Amount}"
-                            >
-                            
-                        </TextCell>
+                            <ViewCell IsEnabled="False">
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                                    <Label Text="{Binding Name}"
+                                           Margin="10" HorizontalOptions="StartAndExpand"
+                                           FontSize="30" FontAttributes="Bold"
+                                           />
+
+                                    <Label Text="{Binding Amount, StringFormat='{0:F0} EUR'}"
+                                           Margin="10" HorizontalOptions="EndAndExpand"
+                                           FontSize="30" FontAttributes="Bold"
+                                           />
+                                    </StackLayout>
+
+                                    <StackLayout>
+                                        <Label Text="{Binding DT}"
+                                               Margin="10, 0, 0, 0"
+                                               FontSize="20" FontAttributes="Italic"
+                                               />
+
+                                        <Label Text="{Binding CatId, Converter={StaticResource CategoryConverter}}"
+                                               Margin="10, 0, 0, 0"
+                                               FontSize="20"
+                                               />
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
 
