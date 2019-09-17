@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MoneyCure.Controller;
 
 namespace MoneyCure.Pages
 {
@@ -33,6 +34,13 @@ namespace MoneyCure.Pages
                 await DisplayAlert("Error", "Information is not valid.", "OK");
             }
 
+        }
+        async void Reset(object sender, EventArgs args)
+        {
+            await App.SQLiteDb.DeleteAllTransactions();
+            Data.Utils.GetInstance().SetDouble("CheckingBalance", 0);
+
+            await Navigation.PopAsync();
         }
     }
 }
