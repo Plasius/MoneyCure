@@ -4,17 +4,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BackgroundImageSource="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/wallpaper.jpg"
              x:Class="MoneyCure.Pages.SettingsPage">
     <ContentPage.Content>
         <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
             <StackLayout>
-                <ImageButton BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/Logo.png" HorizontalOptions="Center" VerticalOptions="Start"/>
-                <Label Text="Welcome to Money Cure app." HorizontalOptions="Center" WidthRequest="200" Margin="0,30,0,0" FontAttributes="Italic"/>
-                <Label Text="Sign up and set a pin." HorizontalOptions="Center" WidthRequest="200" FontAttributes="Italic"/>
+                <ImageButton Margin="10" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/Logo.png" HorizontalOptions="Center" VerticalOptions="Start"/>
+                <Label Text="configure your information" HorizontalTextAlignment="Center" FontSize="26" HorizontalOptions="Center" WidthRequest="200" FontAttributes="Italic"/>
 
-                <StackLayout Margin="20,20,0,0" >
-                    <Label Text="PIN" Margin="10,30,0,0"/>
-                    <Entry IsPassword="True"
+                <StackLayout Margin="10,20,10,0" >
+                    <StackLayout Orientation="Horizontal" Margin="0,30,0,0">
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="PIN"  FontSize="22"/>
+                            <Entry IsPassword="True"
                        Keyboard="Numeric"
                        MaxLength="4"
                        WidthRequest="150"
@@ -22,8 +24,10 @@
                        HorizontalOptions="Start" 
                        VerticalOptions="Center"
                            x:Name="Pin1"/>
-                    <Label Text="Confirming PIN" Margin="10,20,0,0"/>
-                    <Entry IsPassword="True" 
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Confirming PIN"  FontSize="22"/>
+                            <Entry IsPassword="True" 
                        Keyboard="Numeric"
                        MaxLength="4"
                        WidthRequest="150"
@@ -31,17 +35,25 @@
                        HorizontalOptions="Start"
                        VerticalOptions="Center"
                            x:Name="Pin2"/>
-                    <Label Text="Set your saving goal" Margin="10,20,0,0"/>
-                    <Entry Keyboard="Numeric"
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand">
+                        <Label Text="Set your saving goal" Margin="0,20,0,0" FontSize="22"/>
+                        <Entry Keyboard="Numeric"
                            WidthRequest="150"
                            HeightRequest="50"
-                           HorizontalOptions="Start" 
+                           HorizontalOptions="CenterAndExpand" 
                            VerticalOptions="Center"
                            x:Name="Goal"/>
+                    </StackLayout>
                 </StackLayout>
                 <Button Text="Submit"
                         Clicked="Subbt"
-                       HorizontalOptions="CenterAndExpand"/>
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="150"/>
+                <Button Text="Reset" Clicked="Reset" 
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="150"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

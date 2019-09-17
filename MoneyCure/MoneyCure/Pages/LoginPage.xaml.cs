@@ -37,7 +37,6 @@ namespace MoneyCure.Pages
             if (int.Parse(pinEntry.Text) == toMatch)
             {
                 //successfully logged in
-                Data.Utils.GetInstance().SetBool("StayLoggedIn", checker.IsChecked);
                 App.Current.MainPage = new NavigationPage(new TransactionsPage());
             }
             else
