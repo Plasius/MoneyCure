@@ -18,7 +18,48 @@ namespace MoneyCure.Pages
             double b = Data.Utils.GetInstance().GetDouble("SavingsGoal", 0);
             SaveNum.Text = Math.Round(a, 2).ToString() + " / " + Math.Round(b, 2).ToString();
 
+            int progress = (int)((a / b) * 10);
 
+            if (progress >= 1)
+            {
+                B1.BackgroundColor = Color.SkyBlue;
+            }
+            if (progress >= 2)
+            {
+                B2.BackgroundColor = Color.SkyBlue;
+            }
+            if (progress >= 3)
+            {
+                B3.BackgroundColor = Color.SkyBlue;
+            }
+            if (progress >= 4)
+            {
+                B4.BackgroundColor = Color.SkyBlue;
+            }
+            if (progress >= 5)
+            {
+                B5.BackgroundColor = Color.SkyBlue;
+            }
+            if (progress >= 6)
+            {
+                B6.BackgroundColor = Color.SkyBlue;
+            }
+            if (progress >= 7)
+            {
+                B7.BackgroundColor = Color.SkyBlue;
+            }
+            if (progress >= 8)
+            {
+                B8.BackgroundColor = Color.SkyBlue;
+            }
+            if (progress >= 9)
+            {
+                B9.BackgroundColor = Color.SkyBlue;
+            }
+            if (progress >= 10)
+            {
+                B10.BackgroundColor = Color.SkyBlue;
+            }
 
         }
 
@@ -67,9 +108,12 @@ namespace MoneyCure.Pages
             App.SQLiteDb.CreateTransaction(new Model.Transaction(megtakaritando, DateTime.Now, "Savings", (int)Data.Utils.Categories.Savings));
             
 
+            
+            OnAppearing();
             double a = Data.Utils.GetInstance().GetDouble("SavingsBalance", currentSavingsBalance + megtakaritando);
             double b = Data.Utils.GetInstance().GetDouble("SavingsGoal", currentSavingsBalance + megtakaritando);
             SaveNum.Text = Math.Round(a, 2).ToString() + " / " + Math.Round(b, 2).ToString();
+
         }
         
         public void OnAmountClicked(object sender, EventArgs args)
