@@ -24,7 +24,7 @@ namespace MoneyCure.Pages
             if (Pin1.Text != null && Pin1.Text == Pin2.Text && Goal.Text != null)
             {
 
-                Data.Utils.GetInstance().SetInt("SavingsGoal", int.Parse(Goal.Text));
+                Data.Utils.GetInstance().SetDouble("SavingsGoal", int.Parse(Goal.Text));
                 Data.Utils.GetInstance().SetInt("PINCode", int.Parse(Pin1.Text));
                 Data.Utils.GetInstance().SetBool("StayLoggedIn", false);
                 await Navigation.PopAsync();

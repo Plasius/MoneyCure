@@ -39,7 +39,7 @@ namespace MoneyCure.Data
 
             CheckingBalance - double - current user balance
 
-            SavingsGoal - int - a user-defined target to reach through saving up money
+            SavingsGoal - double - a user-defined target to reach through saving up money
             SavingsBalance - double - amount of money saved up by the user
 
         */

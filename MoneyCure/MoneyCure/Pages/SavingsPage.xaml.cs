@@ -12,6 +12,16 @@ namespace MoneyCure.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SavingsPage : ContentPage
     {
+        protected override void OnAppearing()
+        {
+            double a = Data.Utils.GetInstance().GetDouble("SavingsBalance", 0);
+            double b = Data.Utils.GetInstance().GetDouble("SavingsGoal", 0);
+            SaveNum.Text = Math.Round(a, 2).ToString() + " / " + Math.Round(b, 2).ToString();
+
+
+
+        }
+
         public SavingsPage()
         {
             InitializeComponent();
@@ -40,16 +50,26 @@ namespace MoneyCure.Pages
                 
 
             int megtakaritando = int.Parse(More.Text);
-            if (Data.Utils.GetInstance().GetDouble("CheckingBalance", 0) >= megtakaritando) {
-                Data.Utils.GetInstance().SetDouble("CheckingBalance", Data.Utils.GetInstance().GetDouble("CheckingBalance", 0)-megtakaritando);
 
-                Data.Utils.GetInstance().SetDouble("SavingsBalance", Data.Utils.GetInstance().GetDouble("SavingsBalance", 0) + megtakaritando);
+            if (Data.Utils.GetInstance().GetDouble("CheckingBalance", 0) < megtakaritando)
+            {
+                DisplayAlert("Error", "Not enough money", "OK");
+                return;
 
-                App.SQLiteDb.CreateTransaction(new Model.Transaction(megtakaritando, DateTime.Now, "Savings", (int)Data.Utils.Categories.Savings));
-
-                
             }
 
+
+            Data.Utils.GetInstance().SetDouble("CheckingBalance", Data.Utils.GetInstance().GetDouble("CheckingBalance", 0)-megtakaritando);
+
+            double currentSavingsBalance = Data.Utils.GetInstance().GetDouble("SavingsBalance", 0);
+            Data.Utils.GetInstance().SetDouble("SavingsBalance",  currentSavingsBalance+ megtakaritando);
+
+            App.SQLiteDb.CreateTransaction(new Model.Transaction(megtakaritando, DateTime.Now, "Savings", (int)Data.Utils.Categories.Savings));
+            
+
+            double a = Data.Utils.GetInstance().GetDouble("SavingsBalance", currentSavingsBalance + megtakaritando);
+            double b = Data.Utils.GetInstance().GetDouble("SavingsGoal", currentSavingsBalance + megtakaritando);
+            SaveNum.Text = Math.Round(a, 2).ToString() + " / " + Math.Round(b, 2).ToString();
         }
         
         public void OnAmountClicked(object sender, EventArgs args)
