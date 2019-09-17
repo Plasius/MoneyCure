@@ -24,6 +24,18 @@ namespace MoneyCure.Pages
             {
                 B1.BackgroundColor = Color.SkyBlue;
             }
+            else {
+                B1.BackgroundColor = Color.LightGray;
+                B2.BackgroundColor = Color.LightGray;
+                B3.BackgroundColor = Color.LightGray;
+                B4.BackgroundColor = Color.LightGray;
+                B5.BackgroundColor = Color.LightGray;
+                B6.BackgroundColor = Color.LightGray;
+                B7.BackgroundColor = Color.LightGray;
+                B8.BackgroundColor = Color.LightGray;
+                B9.BackgroundColor = Color.LightGray;
+                B10.BackgroundColor = Color.LightGray;
+            }
             if (progress >= 2)
             {
                 B2.BackgroundColor = Color.SkyBlue;
