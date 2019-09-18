@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MoneyCure.Data;
 
 namespace MoneyCure.Pages
 {
@@ -95,7 +96,7 @@ namespace MoneyCure.Pages
              new Transaction category==savings
              
              */
-            if (More.Text == null)
+            if (Utils.NullorEmpty( More.Text))
             {
                 DisplayAlert("Error", "Can't add saving", "OK");
                 return;
