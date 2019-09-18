@@ -4,12 +4,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             BackgroundImageSource="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/wallpaper.jpg"
              x:Class="MoneyCure.Pages.ReportsPage">
 
     <ContentPage.Content>
+        <RelativeLayout>
+            <Image
+                Aspect="AspectFill"
+                Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/wallpaper.jpg"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                IsEnabled="False"/>
 
-        <Grid>
+            <Grid RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="4*" />
@@ -116,5 +123,6 @@
             </Grid>
         </Grid>
 
+        </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>
