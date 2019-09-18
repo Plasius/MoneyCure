@@ -45,13 +45,18 @@ namespace MoneyCure.Pages
         {
             if (Selected)
             {
-                double am = double.Parse(Amount.Text);
-                if (DesCript.Text == null)
+                double am = 0;
+                if (!Utils.NullorEmpty(Amount.Text)) { am = double.Parse(Amount.Text); }
+                else {
+                    DisplayAlert("Error", "Please enter the amount", "OK");
+                    return;
+                }
+                if (Utils.NullorEmpty(DesCript.Text))
                 {
                     DisplayAlert("Error","Description can't be empty","OK");
                     return;
                 }
-                if (am > 0)
+                if (am >= 0.01)
                 {
                     double loBal = Data.Utils.GetInstance().GetDouble("CheckingBalance", 0);
 
@@ -59,6 +64,11 @@ namespace MoneyCure.Pages
 
                     if (IsExpense)
                     {
+                        if (picker.SelectedIndex == -1)
+                        {
+                            DisplayAlert("Error", "Don't forget the picker", "OK");
+                            return;
+                        }
                         if (loBal < am)
                         {
                             DisplayAlert("Error", "You don't heve enough money", "I'm broke");
@@ -87,8 +97,12 @@ namespace MoneyCure.Pages
                 }
                 else
                 {
-                    DisplayAlert("Error", "Amount can't be negative!", "OK");
+                    DisplayAlert("Error", "Amount too small!", "OK");
                 }
+            }
+            else
+            {
+                DisplayAlert("Error","Please select Income/Expense", "OK");
             }
         }
     }

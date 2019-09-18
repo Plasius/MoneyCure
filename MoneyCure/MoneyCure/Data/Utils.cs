@@ -34,8 +34,7 @@ namespace MoneyCure.Data
 
         /*
          STORED DATA:
-            PINCode - int - 4-digit pin code of the user
-            StayLoggedIn - bool - keeps track of the user preference whether to log in automatically
+            PINCode - string - 4-char pin code of the user
 
             CheckingBalance - double - current user balance
 
@@ -121,7 +120,12 @@ namespace MoneyCure.Data
             return def;
         }
 
-
+        public static bool NullorEmpty(string st)
+        {
+            if (st == null) { return true; }
+            if (st == "") { return true; }
+            return false;
+        }
 
 
     }
