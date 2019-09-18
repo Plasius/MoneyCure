@@ -14,16 +14,18 @@ namespace MoneyCure.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingsPage : ContentPage
     {
-        public SettingsPage()
+        public SettingsPage(bool hideResetButton)
         {
             InitializeComponent();
+
+            resetButton.IsVisible = !hideResetButton;
 
         }
 
         async void SetPin (object sender, EventArgs args)
         {
             
-            if (!Utils.NullorEmpty(Pin1.Text) && Pin1.Text == Pin2.Text && Pin1.Text.Length==4)
+            if (!Utils.NullorEmpty(Pin1.Text) && Pin1.Text.Length==4)
             {
                 Data.Utils.GetInstance().SetString("PINCode", Pin1.Text);
                 await Navigation.PopAsync();
@@ -53,8 +55,6 @@ namespace MoneyCure.Pages
             await App.SQLiteDb.DeleteAllTransactions();
             Data.Utils.GetInstance().SetDouble("CheckingBalance", 0);
             Data.Utils.GetInstance().SetDouble("SavingsBalance", 0);
-            App.Current.Properties["PINCode"] = null;
-            Data.Utils.GetInstance().SetDouble("SavingsGoal", 0);
 
             await Navigation.PopAsync();
         }

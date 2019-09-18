@@ -22,7 +22,7 @@ namespace MoneyCure.Pages
         }
 
         public async void OnRegisterClicked(object sender, EventArgs eventArgs) {
-            await Navigation.PushAsync(new SettingsPage());
+            await Navigation.PushAsync(new SettingsPage(true));
         }
 
         public async void OnLoginClicked(object sender, EventArgs args)

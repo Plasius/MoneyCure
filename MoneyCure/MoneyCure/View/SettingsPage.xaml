@@ -20,10 +20,10 @@
                     <ImageButton Margin="10" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/Logo.png" HorizontalOptions="Center" VerticalOptions="Start"/>
                     <Label Text="configure your information" HorizontalTextAlignment="Center" FontSize="26" HorizontalOptions="Center" WidthRequest="200" FontAttributes="Italic"/>
 
-                    <StackLayout Margin="10,20,10,0" >
+                    <StackLayout Margin="10" >
                         <StackLayout Orientation="Horizontal" Margin="0,30,0,0">
                             <StackLayout HorizontalOptions="CenterAndExpand">
-                                <Label Text="PIN"  FontSize="22"/>
+                                <Label Text="PIN" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="22"/>
                                 <Entry IsPassword="True"
                        Keyboard="Numeric"
                        MaxLength="4"
@@ -33,24 +33,14 @@
                        VerticalOptions="Center"
                            x:Name="Pin1"/>
                             </StackLayout>
-                            <StackLayout HorizontalOptions="CenterAndExpand">
-                                <Label Text="Confirming PIN"  FontSize="22"/>
-                                <Entry IsPassword="True" 
-                       Keyboard="Numeric"
-                       MaxLength="4"
-                       WidthRequest="150"
-                       HeightRequest="50"
-                       HorizontalOptions="Start"
-                       VerticalOptions="Center"
-                           x:Name="Pin2"/>
-                            </StackLayout>
                         </StackLayout>
-                        <Button Text="Submit"
+                        <Button Text="Set PIN"
                                 HorizontalOptions="CenterAndExpand"
                                 Clicked="SetPin"/>
                         <StackLayout HorizontalOptions="CenterAndExpand">
-                            <Label Text="Set your saving goal" Margin="0,20,0,0" FontSize="22"/>
+                            <Label Text="Set your savings goal" Margin="0,20,0,0" FontSize="22"/>
                             <Entry Keyboard="Numeric"
+                                   Placeholder="10000"
                            WidthRequest="150"
                            HeightRequest="50"
                            HorizontalOptions="CenterAndExpand" 
@@ -59,10 +49,10 @@
                            HorizontalTextAlignment="Center"/>
                         </StackLayout>
                     </StackLayout>
-                    <Button Text="Submit"
+                    <Button Text="Set Goal"
                             HorizontalOptions="CenterAndExpand"
                             Clicked="SetGoal"/>
-                    <Button Text="Reset" Clicked="Reset" 
+                    <Button Text="Reset" Clicked="Reset" x:Name="resetButton" 
                         HorizontalOptions="CenterAndExpand"
                         WidthRequest="150"/>
                 </StackLayout>

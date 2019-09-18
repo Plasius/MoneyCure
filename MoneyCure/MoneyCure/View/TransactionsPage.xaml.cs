@@ -44,7 +44,7 @@ namespace MoneyCure.Pages
 
         public async void OnSettingsClicked(object sender, EventArgs eventArgs)
         {
-            await Navigation.PushAsync(new SettingsPage());
+            await Navigation.PushAsync(new SettingsPage(false));
         }
 
         public async void OnAddTransactionClicked(object sender, EventArgs eventArgs)

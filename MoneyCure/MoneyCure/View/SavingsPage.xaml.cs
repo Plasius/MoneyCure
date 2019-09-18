@@ -16,7 +16,7 @@ namespace MoneyCure.Pages
         protected override void OnAppearing()
         {
             double a = Data.Utils.GetInstance().GetDouble("SavingsBalance", 0);
-            double b = Data.Utils.GetInstance().GetDouble("SavingsGoal", 0);
+            double b = Data.Utils.GetInstance().GetDouble("SavingsGoal", 1000);
             SaveNum.Text = Math.Round(a, 2).ToString() + " / " + Math.Round(b, 2).ToString();
 
             int progress = (int)((a / b) * 10);
@@ -84,7 +84,7 @@ namespace MoneyCure.Pages
 
         async void OnSettingsClicked(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new SettingsPage());
+            await Navigation.PushAsync(new SettingsPage(false));
         }
 
         public void Addbt(object sender, EventArgs args)

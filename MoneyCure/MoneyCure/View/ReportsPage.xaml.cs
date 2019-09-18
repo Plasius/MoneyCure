@@ -22,7 +22,7 @@ namespace MoneyCure.Pages
         //EVENT HANDLERS
         public async void OnSettingsClicked(object sender, EventArgs eventArgs)
         {
-            await Navigation.PushAsync(new SettingsPage());
+            await Navigation.PushAsync(new SettingsPage(false));
         }
         public void OnSavingsClicked(object sender, EventArgs eventArgs)
         {
