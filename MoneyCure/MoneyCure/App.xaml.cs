@@ -1,10 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using MoneyCure.Pages;
 using MoneyCure.Controller;
 using System.IO;
-using Plugin.LocalNotifications;
 
 namespace MoneyCure
 {
@@ -33,9 +31,6 @@ namespace MoneyCure
 
             MainPage = new NavigationPage(new LoginPage());
 
-            //notification
-            if(Data.Utils.GetInstance().GetDouble("CheckingBalance", 500) < 20)
-                CrossLocalNotifications.Current.Show("Running low", "Add some funds to your account.", 0, DateTime.Now.AddMinutes(1));
 
 
         }

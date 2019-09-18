@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MoneyCure.Model;
+using Plugin.LocalNotifications;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,6 +21,10 @@ namespace MoneyCure.Pages
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+
+            //notification
+            if (Data.Utils.GetInstance().GetDouble("CheckingBalance", 500) < 20)
+                CrossLocalNotifications.Current.Show("Running low", "Add some funds to your account.", 0);
 
         }
 
