@@ -86,6 +86,11 @@ namespace MoneyCure.Pages
                     }
                     else
                     {
+                        if (loBal + am > 1000000)
+                        {
+                            DisplayAlert("Error", "Mo' Money, Mo' Problems", "OK");
+                        }
+
                         Data.Utils.GetInstance().SetDouble("CheckingBalance",am+loBal);
 
 
