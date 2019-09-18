@@ -55,7 +55,8 @@
                            HeightRequest="50"
                            HorizontalOptions="CenterAndExpand" 
                            VerticalOptions="Center"
-                           x:Name="Goal"/>
+                           x:Name="Goal"
+                           HorizontalTextAlignment="Center"/>
                         </StackLayout>
                     </StackLayout>
                     <Button Text="Submit"
