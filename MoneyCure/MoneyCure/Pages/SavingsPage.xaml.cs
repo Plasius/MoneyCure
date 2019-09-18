@@ -103,7 +103,12 @@ namespace MoneyCure.Pages
                 
 
             int megtakaritando = int.Parse(More.Text);
-
+            if (megtakaritando < 0)
+            {
+                DisplayAlert("Error", "Amount can't be negative", "OK");
+                return;
+            }
+                
             if (Data.Utils.GetInstance().GetDouble("CheckingBalance", 0) < megtakaritando)
             {
                 DisplayAlert("Error", "Not enough money", "OK");
@@ -116,7 +121,7 @@ namespace MoneyCure.Pages
 
             double currentSavingsBalance = Data.Utils.GetInstance().GetDouble("SavingsBalance", 0);
             Data.Utils.GetInstance().SetDouble("SavingsBalance",  currentSavingsBalance+ megtakaritando);
-
+            
             App.SQLiteDb.CreateTransaction(new Model.Transaction(megtakaritando, DateTime.Now, "Savings", (int)Data.Utils.Categories.Savings));
             
 
