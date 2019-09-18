@@ -22,16 +22,17 @@ namespace MoneyCure.Pages
 
         async void Subbt (object sender, EventArgs args)
         {
-            if (!Utils.NullorEmpty(Pin1.Text) && Pin1.Text == Pin2.Text && !Utils.NullorEmpty(Goal.Text) && int.Parse(Goal.Text)>0)
+            int logoal;
+            if (!Utils.NullorEmpty(Pin1.Text) && Pin1.Text == Pin2.Text && !Utils.NullorEmpty(Goal.Text) && int.TryParse(Goal.Text,out logoal) && int.Parse(Goal.Text) > 0)
             {
 
                 Data.Utils.GetInstance().SetDouble("SavingsGoal", int.Parse(Goal.Text));
                 Data.Utils.GetInstance().SetString("PINCode", Pin1.Text);
-                Data.Utils.GetInstance().SetBool("StayLoggedIn", false);
                 await Navigation.PopAsync();
 
             }
-            else {
+            else
+            {
                 await DisplayAlert("Error", "Information is not valid.", "OK");
             }
 
