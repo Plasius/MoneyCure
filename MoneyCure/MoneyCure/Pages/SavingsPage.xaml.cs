@@ -96,42 +96,50 @@ namespace MoneyCure.Pages
              new Transaction category==savings
              
              */
+            
             if (Utils.NullorEmpty( More.Text))
             {
                 DisplayAlert("Error", "Can't add saving", "OK");
                 return;
             }
                 
+            int megtakaritando;
 
-            int megtakaritando = int.Parse(More.Text);
-            if (megtakaritando < 0)
+            if (int.TryParse(More.Text, out megtakaritando))
             {
-                DisplayAlert("Error", "Amount can't be negative", "OK");
+                if (megtakaritando < 0)
+                {
+                    DisplayAlert("Error", "Amount can't be negative", "OK");
+                    return;
+                }
+
+                if (Data.Utils.GetInstance().GetDouble("CheckingBalance", 0) < megtakaritando)
+                {
+                    DisplayAlert("Error", "Not enough money", "OK");
+                    return;
+
+                }
+
+
+                Data.Utils.GetInstance().SetDouble("CheckingBalance", Data.Utils.GetInstance().GetDouble("CheckingBalance", 0) - megtakaritando);
+
+                double currentSavingsBalance = Data.Utils.GetInstance().GetDouble("SavingsBalance", 0);
+                Data.Utils.GetInstance().SetDouble("SavingsBalance", currentSavingsBalance + megtakaritando);
+
+                App.SQLiteDb.CreateTransaction(new Model.Transaction(megtakaritando, DateTime.Now, "Savings", (int)Data.Utils.Categories.Savings));
+
+
+
+                OnAppearing();
+                double a = Data.Utils.GetInstance().GetDouble("SavingsBalance", currentSavingsBalance + megtakaritando);
+                double b = Data.Utils.GetInstance().GetDouble("SavingsGoal", currentSavingsBalance + megtakaritando);
+                SaveNum.Text = Math.Round(a, 2).ToString() + " / " + Math.Round(b, 2).ToString();
+            }
+            else
+            {
+                DisplayAlert("Error", "Can't add saving", "OK");
                 return;
             }
-                
-            if (Data.Utils.GetInstance().GetDouble("CheckingBalance", 0) < megtakaritando)
-            {
-                DisplayAlert("Error", "Not enough money", "OK");
-                return;
-
-            }
-
-
-            Data.Utils.GetInstance().SetDouble("CheckingBalance", Data.Utils.GetInstance().GetDouble("CheckingBalance", 0)-megtakaritando);
-
-            double currentSavingsBalance = Data.Utils.GetInstance().GetDouble("SavingsBalance", 0);
-            Data.Utils.GetInstance().SetDouble("SavingsBalance",  currentSavingsBalance+ megtakaritando);
-            
-            App.SQLiteDb.CreateTransaction(new Model.Transaction(megtakaritando, DateTime.Now, "Savings", (int)Data.Utils.Categories.Savings));
-            
-
-            
-            OnAppearing();
-            double a = Data.Utils.GetInstance().GetDouble("SavingsBalance", currentSavingsBalance + megtakaritando);
-            double b = Data.Utils.GetInstance().GetDouble("SavingsGoal", currentSavingsBalance + megtakaritando);
-            SaveNum.Text = Math.Round(a, 2).ToString() + " / " + Math.Round(b, 2).ToString();
-
         }
         
         public void OnAmountClicked(object sender, EventArgs args)
