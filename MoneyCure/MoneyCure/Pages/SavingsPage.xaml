@@ -8,73 +8,83 @@
              x:Class="MoneyCure.Pages.SavingsPage">
 
     <ContentPage.Content>
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="4*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+        <RelativeLayout>
+            <Image
+                Aspect="AspectFill"
+                Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/wallpaper.jpg"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                IsEnabled="False"/>
 
 
-            <RelativeLayout Grid.Row="0" Grid.Column="0">
 
-                <ImageButton                    
+            <Grid RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <RelativeLayout Grid.Row="0" Grid.Column="0">
+
+                    <ImageButton                    
                     Clicked="OnSettingsClicked" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50" Margin="10"
                     Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/settings.png"/>
 
-                <ImageButton RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-110}"
+                    <ImageButton RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-110}"
                         BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Margin="10"
                         Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/Logo.png" />
-            </RelativeLayout>
+                </RelativeLayout>
 
 
 
-            <StackLayout Grid.Row="1" Grid.Column="0">
-                <Grid Padding="15" Margin="0,20,0,0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+                <StackLayout Grid.Row="1" Grid.Column="0">
+                    <Grid Padding="15" Margin="0,20,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
 
-                    <BoxView x:Name="B1"  Grid.Row="0" Grid.Column="0" BackgroundColor="LightGray"/>
-                    <BoxView x:Name="B2" Grid.Row="0" Grid.Column="1" BackgroundColor="LightGray"/>
-                    <BoxView x:Name="B3" Grid.Row="0" Grid.Column="2" BackgroundColor="LightGray"/>
-                    <BoxView x:Name="B4" Grid.Row="0" Grid.Column="3" BackgroundColor="LightGray"/>
-                    <BoxView x:Name="B5" Grid.Row="0" Grid.Column="4" BackgroundColor="LightGray"/>
-                    <BoxView x:Name="B6" Grid.Row="0" Grid.Column="5" BackgroundColor="LightGray"/>
-                    <BoxView x:Name="B7" Grid.Row="0" Grid.Column="6" BackgroundColor="LightGray"/>
-                    <BoxView x:Name="B8" Grid.Row="0" Grid.Column="7" BackgroundColor="LightGray"/>
-                    <BoxView x:Name="B9" Grid.Row="0" Grid.Column="8" BackgroundColor="LightGray"/>
-                    <BoxView x:Name="B10" Grid.Row="0" Grid.Column="9" BackgroundColor="LightGray"/>
-                </Grid>
-                <Label Text="Loading..." 
+                        <BoxView x:Name="B1"  Grid.Row="0" Grid.Column="0" BackgroundColor="LightGray"/>
+                        <BoxView x:Name="B2" Grid.Row="0" Grid.Column="1" BackgroundColor="LightGray"/>
+                        <BoxView x:Name="B3" Grid.Row="0" Grid.Column="2" BackgroundColor="LightGray"/>
+                        <BoxView x:Name="B4" Grid.Row="0" Grid.Column="3" BackgroundColor="LightGray"/>
+                        <BoxView x:Name="B5" Grid.Row="0" Grid.Column="4" BackgroundColor="LightGray"/>
+                        <BoxView x:Name="B6" Grid.Row="0" Grid.Column="5" BackgroundColor="LightGray"/>
+                        <BoxView x:Name="B7" Grid.Row="0" Grid.Column="6" BackgroundColor="LightGray"/>
+                        <BoxView x:Name="B8" Grid.Row="0" Grid.Column="7" BackgroundColor="LightGray"/>
+                        <BoxView x:Name="B9" Grid.Row="0" Grid.Column="8" BackgroundColor="LightGray"/>
+                        <BoxView x:Name="B10" Grid.Row="0" Grid.Column="9" BackgroundColor="LightGray"/>
+                    </Grid>
+                    <Label Text="Loading..." 
                        HorizontalOptions="End" 
                        Margin="0,0,15,0"
                        x:Name="SaveNum"/>
 
-                <Label Text="Add money" 
+                    <Label Text="Add money" 
                    HorizontalOptions="Center" 
                    VerticalOptions="Center" 
                    Margin="10" 
                        FontSize="30"/>
 
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="15">
-                    <Button Text="5" 
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="15">
+                        <Button Text="5" 
                         BorderColor="#211DF2" 
                         BorderWidth="1" 
                             WidthRequest="50"
@@ -82,7 +92,7 @@
                         Clicked="OnAmountClicked"
                             x:Name="Ambt1"
                             BorderRadius="15"/>
-                    <Button Text="10" 
+                        <Button Text="10" 
                         BorderColor="#211DF2" 
                         BorderWidth="1" 
                             WidthRequest="50"
@@ -90,7 +100,7 @@
                         Clicked="OnAmountClicked"
                             x:Name="Ambt2"
                             BorderRadius="15"/>
-                    <Button Text="25" 
+                        <Button Text="25" 
                         BorderColor="#211DF2" 
                         BorderWidth="1" 
                         WidthRequest="50"
@@ -98,7 +108,7 @@
                         Clicked="OnAmountClicked"
                             x:Name="Ambt3"
                             BorderRadius="15"/>
-                    <Button Text="50" 
+                        <Button Text="50" 
                         BorderColor="#211DF2" 
                         BorderWidth="1" 
                         WidthRequest="50"
@@ -106,46 +116,46 @@
                         Clicked="OnAmountClicked"
                             x:Name="Ambt4"
                             BorderRadius="15"/>
-                    <Entry x:Name="More"
+                        <Entry x:Name="More"
                            WidthRequest="64" Keyboard="Numeric"/>
-                </StackLayout>
-                <Button Text="Add" 
+                    </StackLayout>
+                    <Button Text="Add" 
                         HorizontalOptions="Center"
                         Clicked="Addbt"/>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
 
 
 
-            <Grid  Grid.Row="2" Grid.Column="0" VerticalOptions="End">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="9*" />
-                    <RowDefinition Height="3*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+                <Grid  Grid.Row="2" Grid.Column="0" VerticalOptions="End">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="9*" />
+                        <RowDefinition Height="3*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
-                <BoxView BackgroundColor="Black" Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="0"/>
+                    <BoxView BackgroundColor="Black" Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="0"/>
 
-                <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/savings.png"
+                    <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/savings.png"
                                      Grid.Row="1" Grid.Column="0" BackgroundColor="Transparent" />
 
-                <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/transactions.png"
+                    <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/transactions.png"
                                      Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" Clicked="OnTransactionsClicked"/>
 
-                <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/reports.png"
+                    <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/reports.png"
                                      Grid.Row="1" Grid.Column="2" BackgroundColor="Transparent" Clicked="OnReportsClicked"/>
 
-                <Label FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Savings" Grid.Row="2" Grid.Column="0"></Label>
-                <Label FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Transactions" Grid.Row="2" Grid.Column="1"></Label>
-                <Label FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Reports" Grid.Row="2" Grid.Column="2"></Label>
+                    <Label FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Savings" Grid.Row="2" Grid.Column="0"></Label>
+                    <Label FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Transactions" Grid.Row="2" Grid.Column="1"></Label>
+                    <Label FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Reports" Grid.Row="2" Grid.Column="2"></Label>
+                </Grid>
             </Grid>
-        </Grid>
-
+        </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>
