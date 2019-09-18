@@ -7,7 +7,17 @@
              BackgroundImageSource="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/wallpaper.jpg"
              x:Class="MoneyCure.Pages.LogPage">
 
-    <RelativeLayout>
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Image
+                Aspect="AspectFill"
+                Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/wallpaper.jpg"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                IsEnabled="False"/>
+
+            <RelativeLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
         <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
             <ImageButton Margin="10" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/Logo.png" HorizontalOptions="Center" VerticalOptions="Start"/>
         </StackLayout>
@@ -28,4 +38,6 @@
             </StackLayout>
         </StackLayout>
     </RelativeLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
 </ContentPage>
