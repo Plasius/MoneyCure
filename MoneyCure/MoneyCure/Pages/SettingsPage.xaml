@@ -45,6 +45,9 @@
                            x:Name="Pin2"/>
                             </StackLayout>
                         </StackLayout>
+                        <Button Text="Submit"
+                                HorizontalOptions="CenterAndExpand"
+                                Clicked="SetPin"/>
                         <StackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Set your saving goal" Margin="0,20,0,0" FontSize="22"/>
                             <Entry Keyboard="Numeric"
@@ -52,13 +55,13 @@
                            HeightRequest="50"
                            HorizontalOptions="CenterAndExpand" 
                            VerticalOptions="Center"
-                           x:Name="Goal"/>
+                           x:Name="Goal"
+                           HorizontalTextAlignment="Center"/>
                         </StackLayout>
                     </StackLayout>
                     <Button Text="Submit"
-                        Clicked="Subbt"
-                        HorizontalOptions="CenterAndExpand"
-                        WidthRequest="150"/>
+                            HorizontalOptions="CenterAndExpand"
+                            Clicked="SetGoal"/>
                     <Button Text="Reset" Clicked="Reset" 
                         HorizontalOptions="CenterAndExpand"
                         WidthRequest="150"/>

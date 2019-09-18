@@ -20,16 +20,13 @@ namespace MoneyCure.Pages
 
         }
 
-        async void Subbt (object sender, EventArgs args)
+        async void SetPin (object sender, EventArgs args)
         {
-            int logoal;
-            if (!Utils.NullorEmpty(Pin1.Text) && Pin1.Text == Pin2.Text && !Utils.NullorEmpty(Goal.Text) && int.TryParse(Goal.Text,out logoal) && int.Parse(Goal.Text) > 0)
+            
+            if (!Utils.NullorEmpty(Pin1.Text) && Pin1.Text == Pin2.Text && Pin1.Text.Length==4)
             {
-
-                Data.Utils.GetInstance().SetDouble("SavingsGoal", int.Parse(Goal.Text));
                 Data.Utils.GetInstance().SetString("PINCode", Pin1.Text);
                 await Navigation.PopAsync();
-
             }
             else
             {
@@ -37,12 +34,26 @@ namespace MoneyCure.Pages
             }
 
         }
+        async void SetGoal(object sender, EventArgs args)
+        {
+            int logoal;
+            if(!Utils.NullorEmpty(Goal.Text) && int.TryParse(Goal.Text, out logoal) && int.Parse(Goal.Text) > 0)
+                {
+                    Data.Utils.GetInstance().SetDouble("SavingsGoal", int.Parse(Goal.Text));
+                    await Navigation.PopAsync();
+            }
+            else
+            {
+                await DisplayAlert("Error", "Information is not valid.", "OK");
+            }
+            
+        }
         async void Reset(object sender, EventArgs args)
         {
             await App.SQLiteDb.DeleteAllTransactions();
             Data.Utils.GetInstance().SetDouble("CheckingBalance", 0);
             Data.Utils.GetInstance().SetDouble("SavingsBalance", 0);
-            Data.Utils.GetInstance().SetInt("PINCode", -1);
+            App.Current.Properties["PINCode"] = null;
             Data.Utils.GetInstance().SetDouble("SavingsGoal", 0);
 
             await Navigation.PopAsync();
