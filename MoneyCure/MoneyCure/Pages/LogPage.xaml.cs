@@ -46,7 +46,7 @@ namespace MoneyCure.Pages
             if (Selected)
             {
                 double am = 0;
-                if (!Utils.NullorEmpty(Amount.Text)) { am = double.Parse(Amount.Text); }
+                if (!Utils.NullorEmpty(Amount.Text)) { am = Math.Round(double.Parse(Amount.Text),2); }
                 else {
                     DisplayAlert("Error", "Please enter the amount", "OK");
                     return;
