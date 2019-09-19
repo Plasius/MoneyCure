@@ -17,7 +17,6 @@
                 IsEnabled="False"/>
 
 
-
             <Grid RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
                 <Grid.RowDefinitions>
@@ -42,8 +41,9 @@
                 </RelativeLayout>
 
 
-
-                <StackLayout Grid.Row="1" Grid.Column="0">
+                <ScrollView Grid.Row="1" Grid.Column="0">
+                <StackLayout>
+                    
                     <Grid Padding="15" Margin="0,20,0,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
@@ -125,6 +125,7 @@
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     </StackLayout>
                 </StackLayout>
+                </ScrollView>
 
 
 

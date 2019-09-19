@@ -42,7 +42,7 @@
             <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" >
 
                 <ScrollView>
-                    <StackLayout  Margin="20">
+                    <StackLayout>
 
                         <StackLayout  Orientation="Horizontal" HorizontalOptions="Start">
                             <Image Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/arrow.png" />
@@ -64,7 +64,7 @@
 
                         
 
-                        <Grid x:Name="expenseGrid" BackgroundColor="Transparent" Margin="10" >
+                        <Grid x:Name="expenseGrid" BackgroundColor="Transparent" Margin="10">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
