@@ -19,6 +19,7 @@ namespace MoneyCure.Pages
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 
+
         }
 
         public async void OnRegisterClicked(object sender, EventArgs eventArgs) {

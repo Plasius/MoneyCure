@@ -14,10 +14,11 @@ namespace MoneyCure.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingsPage : ContentPage
     {
+        bool fromLogin;
         public SettingsPage(bool hideResetButton)
         {
             InitializeComponent();
-
+            fromLogin = hideResetButton;
             resetButton.IsVisible = !hideResetButton;
 
         }
@@ -28,7 +29,14 @@ namespace MoneyCure.Pages
             if (!Utils.NullorEmpty(Pin1.Text) && Pin1.Text.Length==4)
             {
                 Data.Utils.GetInstance().SetString("PINCode", Pin1.Text);
-                await Navigation.PopAsync();
+                if (fromLogin)
+                {
+                    Reset(null, null);
+                }
+                else
+                {
+                    await Navigation.PopAsync();
+                }
             }
             else
             {
