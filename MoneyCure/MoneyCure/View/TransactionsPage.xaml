@@ -25,9 +25,9 @@
             <Grid RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="128" />
                     <RowDefinition Height="*" />
-                    <RowDefinition Height="4*" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="64" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -93,11 +93,10 @@
                 </StackLayout>
 
 
-                <Grid  Grid.Row="2" Grid.Column="0" VerticalOptions="End">
+                <Grid  Grid.Row="2" Grid.Column="0">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="2" />
                         <RowDefinition Height="*" />
-                        <RowDefinition Height="9*" />
-                        <RowDefinition Height="3*" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -115,10 +114,6 @@
 
                     <ImageButton Source="https://raw.githubusercontent.com/Plasius/MoneyCure/master/images/reports.png"
                                      Grid.Row="1" Grid.Column="2" BackgroundColor="Transparent" Clicked="OnReportsClicked"/>
-
-                    <Label FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Savings" Grid.Row="2" Grid.Column="0"></Label>
-                    <Label FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Transactions" Grid.Row="2" Grid.Column="1"></Label>
-                    <Label FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Reports" Grid.Row="2" Grid.Column="2"></Label>
                 </Grid>
             </Grid>
         </RelativeLayout>

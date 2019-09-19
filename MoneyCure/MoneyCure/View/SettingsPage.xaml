@@ -40,7 +40,7 @@
                         <StackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Set your savings goal" Margin="0,20,0,0" FontSize="22"/>
                             <Entry Keyboard="Numeric"
-                                   Placeholder="10000"
+                                   Placeholder="1000"
                            WidthRequest="150"
                            HeightRequest="50"
                            HorizontalOptions="CenterAndExpand" 

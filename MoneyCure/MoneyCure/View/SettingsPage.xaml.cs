@@ -63,7 +63,7 @@ namespace MoneyCure.Pages
             await App.SQLiteDb.DeleteAllTransactions();
             Data.Utils.GetInstance().SetDouble("CheckingBalance", 0);
             Data.Utils.GetInstance().SetDouble("SavingsBalance", 0);
-
+            Data.Utils.GetInstance().SetDouble("SavingsGoal", 1000);
             await Navigation.PopAsync();
         }
     }
